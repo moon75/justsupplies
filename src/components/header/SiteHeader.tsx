@@ -40,7 +40,7 @@ export function SiteHeader() {
     <header className={styles.header}>
       <div className={styles.desktopTop}>
         <div className={styles.contactLinks}>
-          <a href="mailto:contact@woodtowater.co.uk">contact@woodtowater.co.uk</a>
+          <a href="mailto:contact@example.com">contact@example.com</a>
           <a href="tel:01252615977">01252 615977</a>
         </div>
         <Link className={styles.desktopLogo} href="/" aria-label="justsupplies home"><span className={styles.logoArt} aria-hidden="true" /></Link>

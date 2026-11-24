@@ -48,7 +48,7 @@ export function SiteFooter() {
           <h2 id="footer-about" className={styles.heading}>justsupplies</h2>
           <p className={styles.paragraph}>We are an online retailer for outdoor gear and equipment, specialising in unique, cult-favourite brands with a strong selection of household names in between.</p>
           <p className={styles.paragraph}>New products and restocks flow in weekly, so be sure to check back regularly for your next camping essential.</p>
-          <a className={styles.follow} href={shopOrigin} target="_blank" rel="noopener noreferrer" aria-label="Visit the reference shop">
+          <a className={styles.follow} href="#">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M20.8 4.7a5.6 5.6 0 0 0-7.9 0l-.9.9-.9-.9a5.6 5.6 0 0 0-7.9 7.9L12 21l8.8-8.4a5.6 5.6 0 0 0 0-7.9Z"/></svg>
             Follow on shop
           </a>
@@ -58,9 +58,9 @@ export function SiteFooter() {
           </div>
           <ul className={styles.socials} aria-label="Social media">
             {([
-              ["facebook", "Facebook", "https://www.facebook.com/woodtowateruk"],
-              ["instagram", "Instagram", "https://www.instagram.com/woodtowater/"],
-              ["youtube", "YouTube", "https://www.youtube.com/@Woodtowateroutdoors"],
+              ["facebook", "Facebook", "#"],
+              ["instagram", "Instagram", "#"],
+              ["youtube", "YouTube", "#"],
             ] as const).map(([name, label, href]) => <li key={name}><a href={href} target="_blank" rel="noopener noreferrer" aria-label={label}><SocialIcon name={name}/></a></li>)}
           </ul>
         </section>

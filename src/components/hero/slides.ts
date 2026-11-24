@@ -16,7 +16,7 @@ export const heroSlides: readonly HeroSlide[] = [
     image: "/hero/temporary-1.webp",
     position: "25.9113% 47.0839%",
     overlay: "rgb(0 0 0 / 47%)",
-    href: "https://www.woodtowater.co.uk/collections/lightweight-hiking-tents?sort_by=&filter.v.price.gte=&filter.v.price.lte=&filter.p.vendor=3F+UL+GEAR",
+    href: "/collections/lightweight-hiking-tents?sort_by=&filter.v.price.gte=&filter.v.price.lte=&filter.p.vendor=3F+UL+GEAR",
   },
   {
     title: "FireMaple Antarcti Cups",
@@ -24,7 +24,7 @@ export const heroSlides: readonly HeroSlide[] = [
     image: "/hero/temporary-2.webp",
     position: "86.1038% 36.5428%",
     overlay: "rgb(0 0 0 / 44%)",
-    href: "https://www.woodtowater.co.uk/collections/camping-gas-stoves",
+    href: "/collections/camping-gas-stoves",
   },
   {
     title: "Nikwax",
@@ -32,7 +32,7 @@ export const heroSlides: readonly HeroSlide[] = [
     image: "/hero/temporary-3.webp",
     position: "27.5092% 52.7173%",
     overlay: "rgb(0 0 0 / 28%)",
-    href: "https://www.woodtowater.co.uk/collections/nikwax",
+    href: "/collections/nikwax",
   },
   {
     title: "Robens",
@@ -40,7 +40,7 @@ export const heroSlides: readonly HeroSlide[] = [
     image: "/hero/temporary-4.webp",
     position: "51.6043% 46.1381%",
     overlay: "rgb(0 0 0 / 30%)",
-    href: "https://www.woodtowater.co.uk/collections/robens-outdoors",
+    href: "/collections/robens-outdoors",
   },
   {
     title: "3F UL Gear",
@@ -48,7 +48,7 @@ export const heroSlides: readonly HeroSlide[] = [
     image: "/hero/temporary-5.webp",
     position: "30.8399% 53.0351%",
     overlay: "rgb(35 35 35 / 40%)",
-    href: "https://www.woodtowater.co.uk/collections/3fulgear",
+    href: "/collections/3fulgear",
   },
   {
     title: "Shop Tents",
@@ -56,6 +56,6 @@ export const heroSlides: readonly HeroSlide[] = [
     image: "/hero/temporary-6.webp",
     position: "50% 50%",
     overlay: "rgb(0 0 0 / 40%)",
-    href: "https://www.woodtowater.co.uk/collections/all-tents",
+    href: "/collections/all-tents",
   },
 ];

@@ -1,6 +1,7 @@
 import productGroupsData from "./product-groups.json";
 
-export const shopOrigin = "https://www.woodtowater.co.uk";
+// Site-relative links; set to an external origin only if needed.
+export const shopOrigin = "";
 
 export type MenuLink = { label: string; href: string };
 export type MenuGroup = { label: string; links: MenuLink[] };
