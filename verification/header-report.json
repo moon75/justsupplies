@@ -1,0 +1,293 @@
+{
+  "390": {
+    "document": {
+      "width": 390,
+      "height": 900
+    },
+    "elements": {
+      "announcement": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 30
+        },
+        "font": "\"Josefin Sans\", \"Josefin Sans Fallback\", sans-serif",
+        "fontSize": "15px",
+        "bg": "rgb(10, 89, 71)"
+      },
+      "header": {
+        "rect": {
+          "x": 0,
+          "y": 30,
+          "width": 390,
+          "height": 103.4375
+        },
+        "font": "\"Instrument Sans\", \"Instrument Sans Fallback\", sans-serif",
+        "fontSize": "16px",
+        "bg": "rgb(58, 61, 66)"
+      },
+      "logo": {
+        "rect": {
+          "x": 20,
+          "y": 50,
+          "width": 140,
+          "height": 63.4375
+        },
+        "font": "\"Instrument Sans\", \"Instrument Sans Fallback\", sans-serif",
+        "fontSize": "16px",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      "nav": null,
+      "search": null,
+      "cart": {
+        "rect": {
+          "x": 270,
+          "y": 59.21875,
+          "width": 45,
+          "height": 45
+        },
+        "font": "\"Instrument Sans\", \"Instrument Sans Fallback\", sans-serif",
+        "fontSize": "16px",
+        "bg": "rgb(255, 255, 255)"
+      },
+      "mobileNavButton": {
+        "rect": {
+          "x": 325,
+          "y": 59.21875,
+          "width": 45,
+          "height": 45
+        },
+        "font": "\"Instrument Sans\", \"Instrument Sans Fallback\", sans-serif",
+        "fontSize": "16px",
+        "bg": "rgb(255, 255, 255)"
+      }
+    },
+    "status": 200,
+    "errors": [],
+    "mobileMenuVisible": true
+  },
+  "768": {
+    "document": {
+      "width": 768,
+      "height": 900
+    },
+    "elements": {
+      "announcement": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 44
+        },
+        "font": "\"Josefin Sans\", \"Josefin Sans Fallback\", sans-serif",
+        "fontSize": "16px",
+        "bg": "rgb(10, 89, 71)"
+      },
+      "header": {
+        "rect": {
+          "x": 0,
+          "y": 44,
+          "width": 768,
+          "height": 210.3125
+        },
+        "font": "\"Instrument Sans\", \"Instrument Sans Fallback\", sans-serif",
+        "fontSize": "14.4px",
+        "bg": "rgb(58, 61, 66)"
+      },
+      "logo": {
+        "rect": {
+          "x": 296.5,
+          "y": 57,
+          "width": 175,
+          "height": 79.3125
+        },
+        "font": "\"Instrument Sans\", \"Instrument Sans Fallback\", sans-serif",
+        "fontSize": "14.4px",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      "nav": {
+        "rect": {
+          "x": 20,
+          "y": 169.3125,
+          "width": 614,
+          "height": 65
+        },
+        "font": "\"Instrument Sans\", \"Instrument Sans Fallback\", sans-serif",
+        "fontSize": "15px",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      "search": null,
+      "cart": {
+        "rect": {
+          "x": 701,
+          "y": 178.3125,
+          "width": 47,
+          "height": 47
+        },
+        "font": "\"Instrument Sans\", \"Instrument Sans Fallback\", sans-serif",
+        "fontSize": "14.4px",
+        "bg": "rgb(10, 89, 71)"
+      },
+      "mobileNavButton": null
+    },
+    "status": 200,
+    "errors": []
+  },
+  "1280": {
+    "document": {
+      "width": 1280,
+      "height": 900
+    },
+    "elements": {
+      "announcement": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 44
+        },
+        "font": "\"Josefin Sans\", \"Josefin Sans Fallback\", sans-serif",
+        "fontSize": "16px",
+        "bg": "rgb(10, 89, 71)"
+      },
+      "header": {
+        "rect": {
+          "x": 0,
+          "y": 43,
+          "width": 1280,
+          "height": 210.3125
+        },
+        "font": "\"Instrument Sans\", \"Instrument Sans Fallback\", sans-serif",
+        "fontSize": "16px",
+        "bg": "rgb(58, 61, 66)"
+      },
+      "logo": {
+        "rect": {
+          "x": 516,
+          "y": 56,
+          "width": 248,
+          "height": 79.3125
+        },
+        "font": "\"Instrument Sans\", \"Instrument Sans Fallback\", sans-serif",
+        "fontSize": "16px",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      "nav": {
+        "rect": {
+          "x": 20,
+          "y": 168.3125,
+          "width": 690,
+          "height": 65
+        },
+        "font": "\"Instrument Sans\", \"Instrument Sans Fallback\", sans-serif",
+        "fontSize": "15px",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      "search": {
+        "rect": {
+          "x": 710,
+          "y": 174.3125,
+          "width": 485,
+          "height": 55
+        },
+        "font": "\"Instrument Sans\", \"Instrument Sans Fallback\", sans-serif",
+        "fontSize": "16px",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      "cart": {
+        "rect": {
+          "x": 1205,
+          "y": 173.3125,
+          "width": 55,
+          "height": 55
+        },
+        "font": "\"Instrument Sans\", \"Instrument Sans Fallback\", sans-serif",
+        "fontSize": "16px",
+        "bg": "rgb(10, 89, 71)"
+      },
+      "mobileNavButton": null
+    },
+    "status": 200,
+    "errors": []
+  },
+  "1440": {
+    "document": {
+      "width": 1440,
+      "height": 900
+    },
+    "elements": {
+      "announcement": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 44
+        },
+        "font": "\"Josefin Sans\", \"Josefin Sans Fallback\", sans-serif",
+        "fontSize": "16px",
+        "bg": "rgb(10, 89, 71)"
+      },
+      "header": {
+        "rect": {
+          "x": 0,
+          "y": 43,
+          "width": 1440,
+          "height": 210.3125
+        },
+        "font": "\"Instrument Sans\", \"Instrument Sans Fallback\", sans-serif",
+        "fontSize": "16px",
+        "bg": "rgb(58, 61, 66)"
+      },
+      "logo": {
+        "rect": {
+          "x": 580,
+          "y": 56,
+          "width": 280,
+          "height": 79.3125
+        },
+        "font": "\"Instrument Sans\", \"Instrument Sans Fallback\", sans-serif",
+        "fontSize": "16px",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      "nav": {
+        "rect": {
+          "x": 20,
+          "y": 168.3125,
+          "width": 850,
+          "height": 65
+        },
+        "font": "\"Instrument Sans\", \"Instrument Sans Fallback\", sans-serif",
+        "fontSize": "15px",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      "search": {
+        "rect": {
+          "x": 870,
+          "y": 174.3125,
+          "width": 485,
+          "height": 55
+        },
+        "font": "\"Instrument Sans\", \"Instrument Sans Fallback\", sans-serif",
+        "fontSize": "16px",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      "cart": {
+        "rect": {
+          "x": 1365,
+          "y": 173.3125,
+          "width": 55,
+          "height": 55
+        },
+        "font": "\"Instrument Sans\", \"Instrument Sans Fallback\", sans-serif",
+        "fontSize": "16px",
+        "bg": "rgb(10, 89, 71)"
+      },
+      "mobileNavButton": null
+    },
+    "status": 200,
+    "errors": [],
+    "menuVisible": true,
+    "cartVisible": true
+  }
+}

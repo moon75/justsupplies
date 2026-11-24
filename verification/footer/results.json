@@ -1,0 +1,173 @@
+{
+  "390": {
+    "footer": {
+      "x": 0,
+      "y": -0.015625,
+      "width": 390,
+      "height": 1436
+    },
+    "columns": [
+      {
+        "x": 22,
+        "y": 39.984375,
+        "width": 346,
+        "height": 416.875
+      },
+      {
+        "x": 22,
+        "y": 521.859375,
+        "width": 346,
+        "height": 409.5
+      },
+      {
+        "x": 22,
+        "y": 986.359375,
+        "width": 346,
+        "height": 216.125
+      }
+    ],
+    "newsletter": {
+      "x": 22,
+      "y": 1151.296875,
+      "width": 346,
+      "height": 51.1875
+    },
+    "bottom": {
+      "x": 22,
+      "y": 1356.984375,
+      "width": 93.21875,
+      "height": 24
+    },
+    "documentWidth": 390,
+    "errors": [],
+    "currencyOpened": true,
+    "currencySelected": "Jersey (GBP £)⌄",
+    "newsletterMessage": "Newsletter signup is unavailable in this demo."
+  },
+  "768": {
+    "footer": {
+      "x": 0,
+      "y": 211.3125,
+      "width": 768,
+      "height": 688.375
+    },
+    "columns": [
+      {
+        "x": 55,
+        "y": 291.3125,
+        "width": 219.328125,
+        "height": 547.375
+      },
+      {
+        "x": 274.328125,
+        "y": 291.3125,
+        "width": 219.328125,
+        "height": 547.375
+      },
+      {
+        "x": 493.65625,
+        "y": 291.3125,
+        "width": 219.328125,
+        "height": 547.375
+      }
+    ],
+    "newsletter": {
+      "x": 508.65625,
+      "y": 558.25,
+      "width": 189.328125,
+      "height": 51.1875
+    },
+    "bottom": {
+      "x": 55,
+      "y": 838.6875,
+      "width": 93.21875,
+      "height": 25
+    },
+    "documentWidth": 768,
+    "errors": []
+  },
+  "1280": {
+    "footer": {
+      "x": 0,
+      "y": 304.3125,
+      "width": 1280,
+      "height": 596
+    },
+    "columns": [
+      {
+        "x": 55,
+        "y": 384.3125,
+        "width": 390,
+        "height": 427.375
+      },
+      {
+        "x": 445,
+        "y": 384.3125,
+        "width": 390,
+        "height": 427.375
+      },
+      {
+        "x": 835,
+        "y": 384.3125,
+        "width": 390,
+        "height": 427.375
+      }
+    ],
+    "newsletter": {
+      "x": 850,
+      "y": 555.25,
+      "width": 350,
+      "height": 51.1875
+    },
+    "bottom": {
+      "x": 55,
+      "y": 833.3125,
+      "width": 93.21875,
+      "height": 25
+    },
+    "documentWidth": 1280,
+    "errors": []
+  },
+  "1440": {
+    "footer": {
+      "x": 0,
+      "y": 304.3125,
+      "width": 1440,
+      "height": 596
+    },
+    "columns": [
+      {
+        "x": 55,
+        "y": 384.3125,
+        "width": 443.328125,
+        "height": 379.375
+      },
+      {
+        "x": 498.328125,
+        "y": 384.3125,
+        "width": 443.328125,
+        "height": 379.375
+      },
+      {
+        "x": 941.65625,
+        "y": 384.3125,
+        "width": 443.34375,
+        "height": 379.375
+      }
+    ],
+    "newsletter": {
+      "x": 956.65625,
+      "y": 555.25,
+      "width": 350,
+      "height": 51.1875
+    },
+    "bottom": {
+      "x": 55,
+      "y": 833.3125,
+      "width": 93.21875,
+      "height": 25
+    },
+    "documentWidth": 1440,
+    "errors": []
+  }
+}

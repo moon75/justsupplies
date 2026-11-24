@@ -1,0 +1,86 @@
+.announcementSpacer { height: 43px; }
+.announcement { position: fixed; z-index: 60; top: 0; left: 0; width: 100%; height: 44px; display: flex; align-items: center; justify-content: center; background: var(--color-brand); color: #fff; font-family: var(--font-promotion); font-size: 16px; line-height: 20px; }
+.skipLink { position: fixed; z-index: 100; top: -60px; left: 10px; padding: 8px 12px; background: #fff; color: var(--color-text); }
+.skipLink:focus { top: 48px; }
+.header { position: relative; z-index: 40; height: var(--header-desktop-height); background: var(--color-header); color: #fff; }
+.desktopTop { position: relative; display: flex; align-items: center; justify-content: space-between; height: 105.328px; padding: 13px 20px; }
+.contactLinks, .topActions { display: flex; align-items: center; gap: 10px; z-index: 2; }
+.contactLinks a, .topPill { border: 1px solid #fff; border-radius: 30px; color: #fff; background: transparent; padding: 1px 7px; font-size: 12px; line-height: 14px; font-weight: 700; white-space: nowrap; }
+.contactLinks a:hover, .topPill:hover { color: var(--color-brand); background: #fff; }
+.desktopLogo { position: absolute; left: 50%; top: 13px; width: clamp(175px, calc(20vw - 8px), 280px); height: 79.328px; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; }
+.logoArt { display: block; width: 100%; height: 100%; background: url('/justsupplies-mark.svg') center / contain no-repeat; }
+.topDropdown { position: relative; }
+.topPill { display: flex; align-items: center; gap: 2px; }
+.smallDropdown { position: absolute; z-index: 50; top: 100%; right: 0; min-width: 170px; padding: 10px 0; background: #fff; color: var(--color-text); font-size: 14px; font-weight: 400; }
+.smallDropdown a, .smallDropdown button { display: block; width: 100%; padding: 8px 14px; text-align: left; background: none; border: 0; white-space: nowrap; }
+.smallDropdown a:hover, .smallDropdown button:hover { color: var(--color-brand); background: var(--color-page); }
+.desktopBottom { display: flex; align-items: flex-start; height: 105px; padding: 20px; }
+.desktopNav { display: flex; flex: 1; min-width: 0; height: 65px; flex-wrap: wrap; align-content: center; align-items: center; column-gap: 38px; row-gap: 0; font-size: 15px; line-height: 22.5px; font-weight: 600; }
+.desktopNav > a, .navEntry > button { display: inline-flex; height: 32.5px; align-items: center; white-space: nowrap; color: #fff; padding: 5px 0; text-transform: uppercase; }
+.desktopNav > a:hover, .navEntry > button:hover { color: #d9d9d9; }
+.navEntry { position: relative; height: 32.5px; }
+.navEntry > button { gap: 11px; background: none; border: 0; font-size: inherit; font-weight: inherit; }
+.desktopContactBreak { display: none; }
+.downCaret { display: inline-block; width: 0; height: 0; border: 3px solid transparent; border-top-color: currentColor; transform: translateY(2px); }
+.productMenu, .blogMenu { position: absolute; z-index: 55; top: 32.5px; left: 0; width: 231.672px; padding: 15px 0; border-radius: 10px; background: #fff; color: var(--color-text); font-size: 14px; line-height: 20px; font-weight: 400; text-transform: uppercase; }
+.groupRow { position: relative; }
+.groupRow > button, .blogMenu a { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 10px; border: 0; padding: 6px 20px; background: transparent; color: var(--color-text); font-size: inherit; font-weight: inherit; line-height: inherit; text-align: left; text-transform: uppercase; }
+.groupRow > button:hover, .blogMenu a:hover, .subMenu a:hover { color: var(--color-brand); background: #f4f4f4; }
+.subMenu { position: absolute; z-index: 56; top: -15px; left: 100%; width: 260px; max-height: min(650px, calc(100vh - 220px)); overflow-y: auto; padding: 15px 0; border-radius: 10px; background: #fff; }
+.subMenu a { display: block; padding: 6px 20px; font-size: 14px; line-height: 20px; text-transform: none; }
+.desktopSearch { position: relative; flex: 0 0 485px; height: 55px; margin-top: 6px; }
+.desktopSearch input:not([type="hidden"]) { width: 100%; height: 100%; border: 0; border-radius: 50px; padding: 10px 45px 10px 28px; background: #fff; color: var(--color-text); font-size: 16px; outline: none; }
+.desktopSearch input::placeholder { color: #888; opacity: 1; }
+.desktopSearch button { position: absolute; top: 0; right: 8px; width: 42px; height: 55px; display: grid; place-items: center; border: 0; background: none; color: var(--color-brand); }
+.iconButton { position: relative; display: grid; place-items: center; flex: 0 0 55px; width: 55px; height: 55px; margin: 5px 0 0 10px; border: 0; border-radius: 50%; background: var(--color-brand); color: #fff; }
+.cartCount { position: absolute; top: -4px; right: -3px; display: grid; place-items: center; min-width: 17px; height: 17px; padding-inline: 3px; border-radius: 50%; background: #fff; color: var(--color-brand); font-size: 11px; font-weight: 700; line-height: 1; }
+.tabletSearch, .mobileBar, .mobileSearch, .mobileNav { display: none; }
+.cartLayer { position: fixed; z-index: 80; inset: 0; }
+.cartBackdrop { position: absolute; inset: 0; width: 100%; border: 0; background: rgb(0 0 0 / 45%); }
+.cartDrawer { position: absolute; top: 0; right: 0; width: min(400px, 100vw); height: 100vh; overflow-y: auto; background: #fff; color: var(--color-text); }
+.cartHeading { display: flex; align-items: center; justify-content: space-between; padding: 20px; border-bottom: 1px solid #e5e5e5; }
+.cartHeading h2 { margin: 0; font-size: 22px; font-weight: 700; }
+.cartHeading button { border: 0; background: none; }
+.cartNotice { margin: 0; padding: 16px 20px; background: var(--color-page); font-size: 14px; line-height: 1.5; }
+.cartEmpty { margin: 0; padding: 64px 20px 24px; text-align: center; }
+.keepShopping { display: block; width: calc(100% - 40px); margin: 0 20px; border: 0; border-radius: 50px; padding: 13px 20px; background: var(--color-brand); color: #fff; font-size: 16px; font-weight: 700; }
+
+@media (max-width: 1199px) and (min-width: 750px) {
+  .desktopSearch { display: none; }
+  .tabletSearch { display: grid; flex-basis: 47px; width: 47px; height: 47px; margin-top: 9px; background: #fff; color: var(--color-brand); }
+  .desktopCart { flex-basis: 47px; width: 47px; height: 47px; margin-top: 9px; }
+  .mobileSearch { position: absolute; z-index: 53; top: 210.328px; right: 20px; display: block; width: min(420px, calc(100vw - 40px)); padding: 10px; background: var(--color-header); }
+  .mobileSearch input:not([type="hidden"]) { width: 100%; height: 45px; padding: 8px 45px 8px 30px; border: 0; border-radius: 50px; background: #fff; color: var(--color-text); outline: none; }
+  .mobileSearch button { position: absolute; top: 10px; right: 16px; height: 45px; width: 40px; display: grid; place-items: center; border: 0; background: transparent; color: var(--color-brand); }
+}
+
+@media (min-width: 1300px) {
+  .desktopContactBreak { display: block; flex-basis: 100%; height: 0; }
+}
+
+@media (max-width: 989px) and (min-width: 750px) {
+  .announcementSpacer { height: 44px; }
+  .desktopNav { column-gap: 28px; }
+  .contactLinks a, .topPill { font-size: 10px; }
+}
+
+@media (max-width: 749px) {
+  .announcementSpacer, .announcement { height: 30px; }
+  .announcement { font-size: 15px; line-height: 18px; }
+  .header { height: var(--header-mobile-height); }
+  .desktopTop, .desktopBottom { display: none; }
+  .mobileBar { display: flex; align-items: center; justify-content: space-between; height: 103.453px; padding: 20px; }
+  .mobileLogo { display: block; width: 140px; height: 63.453px; }
+  .mobileLogo .logoArt { transform: scale(1.4); }
+  .mobileActions { display: flex; align-items: center; gap: 10px; }
+  .mobileIcon { position: relative; display: grid; place-items: center; width: 45px; height: 45px; border: 0; border-radius: 50%; background: #fff; color: var(--color-brand); }
+  .mobileIcon:last-child { color: var(--color-header); }
+  .mobileSearch { position: absolute; z-index: 53; top: 103.453px; left: 0; display: block; width: 100%; padding: 10px 20px; background: var(--color-header); }
+  .mobileSearch input:not([type="hidden"]) { width: 100%; height: 45px; padding: 8px 45px 8px 30px; border: 0; border-radius: 50px; background: #fff; color: var(--color-text); outline: none; }
+  .mobileSearch button { position: absolute; top: 10px; right: 26px; height: 45px; width: 40px; display: grid; place-items: center; border: 0; background: transparent; color: var(--color-brand); }
+  .mobileNav { position: fixed; z-index: 50; top: 133px; left: 0; display: block; width: 100%; height: calc(100dvh - 133px); overflow-y: auto; padding: 0 20px 30px; background: var(--color-header); color: #fff; }
+  .mobileNav > a, .mobileNav > button { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 53px; border: 0; padding: 12px 10px; background: none; color: #fff; font-size: 15px; font-weight: 600; text-align: left; }
+  .mobileSubNav { padding-left: 20px; }
+  .mobileSubNav > a, .mobileSubNav > div > button, .mobileNested a { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 42px; padding: 10px; border: 0; background: none; color: #fff; font-size: 14px; text-align: left; }
+  .mobileNested { padding-left: 15px; }
+}

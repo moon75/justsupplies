@@ -1,0 +1,17 @@
+import { chromium } from 'playwright';
+import { readFile, writeFile } from 'node:fs/promises';
+const browser=await chromium.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});
+const page=await browser.newPage({viewport:{width:1440,height:900}});
+await page.goto('https://www.woodtowater.co.uk/products/3fulgear-bathtub-footprint-small-medium',{waitUntil:'domcontentloaded'});
+await page.waitForTimeout(800);
+await page.locator('.product-single__meta .product-form__cart-submit').first().click();
+await page.waitForTimeout(1400);
+const result={afterAddUrl:page.url(),drawer:await page.evaluate(()=>{const e=document.querySelector('#sidebar-cart'),r=e.getBoundingClientRect();return {classes:e.className,rect:{x:r.x,y:r.y,width:r.width,height:r.height},text:e.innerText.slice(0,1300)}})};
+await page.goto('https://www.woodtowater.co.uk/cart',{waitUntil:'domcontentloaded'});await page.waitForTimeout(500);
+result.cartPage={url:page.url(),text:(await page.locator('main').innerText()).slice(0,1500)};
+await page.screenshot({path:new URL('./screenshots/cart-page-filled-desktop.png',import.meta.url).pathname,fullPage:true});
+await page.locator('.cart_icon').first().click();await page.waitForTimeout(500);
+result.filledDrawer=await page.evaluate(()=>{const e=document.querySelector('#sidebar-cart');if(!e)return null;const r=e.getBoundingClientRect();return {classes:e.className,rect:{x:r.x,y:r.y,width:r.width,height:r.height},text:e.innerText.slice(0,1300)}});
+if(result.filledDrawer?.rect.x<1440)await page.screenshot({path:new URL('./screenshots/cart-drawer-filled-desktop.png',import.meta.url).pathname,fullPage:false});
+const path=new URL('./design-tokens.json',import.meta.url),data=JSON.parse(await readFile(path,'utf8'));data.interactionDetails.populatedCart=result;await writeFile(path,JSON.stringify(data,null,2));
+console.log(JSON.stringify(result,null,2));await browser.close();

@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --color-page: #f4f4f4;
+  --color-text: #232323;
+  --color-header: #3a3d42;
+  --color-brand: #0a5947;
+  --color-white: #fff;
+  --color-footer: #212121;
+  --font-body: var(--font-instrument), sans-serif;
+  --font-promotion: var(--font-josefin), sans-serif;
+  --content-max: 1660px;
+  --content-gutter: 55px;
+  --header-desktop-height: 210.328px;
+  --header-mobile-height: 103.453px;
+  --announcement-desktop-height: 44px;
+  --announcement-mobile-height: 30px;
+}
+
+@theme inline {
+  --color-background: var(--color-page);
+  --color-foreground: var(--color-text);
+  --font-sans: var(--font-body);
+}
+
+* { box-sizing: border-box; }
+html { background: var(--color-page); }
+body { margin: 0; background: var(--color-page); color: var(--color-text); font-family: var(--font-body); font-size: 16px; line-height: 1.5; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+.site-content { min-height: calc(100vh - var(--announcement-desktop-height) - var(--header-desktop-height)); }
+.site-container { width: 100%; max-width: var(--content-max); margin-inline: auto; padding-inline: var(--content-gutter); }
+:focus-visible { outline: 2px solid var(--color-brand); outline-offset: 3px; }
+
+@media (min-width: 750px) and (max-width: 989px) {
+  body { font-size: 14.4px; }
+}
+
+@media (max-width: 749px) {
+  :root { --content-gutter: 22px; }
+  .site-content { min-height: calc(100vh - var(--announcement-mobile-height) - var(--header-mobile-height)); }
+}

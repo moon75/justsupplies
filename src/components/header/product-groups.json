@@ -1,0 +1,327 @@
+[
+  {
+    "label": "Clothing",
+    "links": [
+      {
+        "label": "Carrying Accessories",
+        "href": "/collections/carrying-accessories"
+      },
+      {
+        "label": "Camping Rucksacks & Backpacks",
+        "href": "/collections/rucksacks-and-backpacks"
+      },
+      {
+        "label": "Dry Bags",
+        "href": "/collections/dry-bags"
+      },
+      {
+        "label": "Dry/Changing Robes",
+        "href": "/collections/dry-robes-changing-robes"
+      },
+      {
+        "label": "Hats",
+        "href": "/collections/hats"
+      },
+      {
+        "label": "Outdoor Gloves",
+        "href": "/collections/outdoor-gloves"
+      },
+      {
+        "label": "Jackets, Smocks & Raincoats",
+        "href": "/collections/camping-jackets"
+      },
+      {
+        "label": "Waterproof Ponchos",
+        "href": "/collections/waterproof-ponchos"
+      },
+      {
+        "label": "Socks, Wet Shoes and Laces",
+        "href": "/collections/hiking-camping-socks"
+      },
+      {
+        "label": "Utility Bags and Pouches",
+        "href": "/collections/utility-bags-and-pouches"
+      },
+      {
+        "label": "Walking Gaiters",
+        "href": "/collections/walking-gaiters"
+      }
+    ]
+  },
+  {
+    "label": "Camping Food",
+    "links": [
+      {
+        "label": "Camping Food",
+        "href": "/collections/dehydrated-camping-expedition-meals"
+      }
+    ]
+  },
+  {
+    "label": "Cookers and Stoves",
+    "links": [
+      {
+        "label": "Fire Making Equipment",
+        "href": "/collections/fire-making-equipment"
+      },
+      {
+        "label": "Gas Stoves",
+        "href": "/collections/camping-gas-stoves"
+      },
+      {
+        "label": "Liquid Fuel Stoves",
+        "href": "/collections/liquid-fuel-stoves"
+      },
+      {
+        "label": "Solid Fuel Stoves",
+        "href": "/collections/solid-fuel-stoves"
+      },
+      {
+        "label": "Camping Gas & Fuel",
+        "href": "/collections/camping-gas-and-fuel"
+      },
+      {
+        "label": "Bottles for Camping Gas & Fuel",
+        "href": "/collections/camping-gas-bottles"
+      }
+    ]
+  },
+  {
+    "label": "Cookware",
+    "links": [
+      {
+        "label": "Cast Iron Cookware",
+        "href": "/collections/cast-iron-cookware"
+      },
+      {
+        "label": "Cooled Bags",
+        "href": "/collections/camping-cool-bags"
+      },
+      {
+        "label": "Cook Sets",
+        "href": "/collections/cook-sets"
+      },
+      {
+        "label": "Kettles and Fire Kettles",
+        "href": "/collections/camping-kettles-and-fire-kettles"
+      },
+      {
+        "label": "Mugs and Cups",
+        "href": "/collections/mugs-and-cups"
+      },
+      {
+        "label": "Thermal Camping Mugs",
+        "href": "/collections/thermal-camping-mugs"
+      },
+      {
+        "label": "Plates and Bowls",
+        "href": "/collections/camping-plates"
+      },
+      {
+        "label": "Pots and Pans",
+        "href": "/collections/camping-pots-pans-kettles"
+      },
+      {
+        "label": "Tableware",
+        "href": "/collections/camping-tableware"
+      },
+      {
+        "label": "Utensils and Accessories",
+        "href": "/collections/utensils-and-accessories"
+      },
+      {
+        "label": "Water Bottles and Flasks",
+        "href": "/collections/outdoors-hydration"
+      },
+      {
+        "label": "Water Filters and Purification",
+        "href": "/collections/water-filters-and-purification"
+      }
+    ]
+  },
+  {
+    "label": "Emergency Kit & Supplies",
+    "links": [
+      {
+        "label": "Emergency Kit & Supplies",
+        "href": "/collections/uk-emergency-kit"
+      }
+    ]
+  },
+  {
+    "label": "Hammocking",
+    "links": [
+      {
+        "label": "Hammocks",
+        "href": "/collections/camping-hammocks"
+      },
+      {
+        "label": "Hammock Accessories",
+        "href": "/collections/hammock-accessories"
+      }
+    ]
+  },
+  {
+    "label": "Hiking",
+    "links": [
+      {
+        "label": "Hiking Poles",
+        "href": "/collections/hiking-poles"
+      },
+      {
+        "label": "Navigation",
+        "href": "/collections/navigation"
+      }
+    ]
+  },
+  {
+    "label": "Hunting",
+    "links": [
+      {
+        "label": "Hunting",
+        "href": "/collections/hunting-gear"
+      }
+    ]
+  },
+  {
+    "label": "Lights",
+    "links": [
+      {
+        "label": "Headtorches",
+        "href": "/collections/headtorches"
+      },
+      {
+        "label": "Lights & Lanterns",
+        "href": "/collections/camping-lights-and-lanterns"
+      },
+      {
+        "label": "Torches",
+        "href": "/collections/camping-torches"
+      }
+    ]
+  },
+  {
+    "label": "Sleeping",
+    "links": [
+      {
+        "label": "Sleeping Bags and Quilts",
+        "href": "/collections/sleeping-bags"
+      },
+      {
+        "label": "Sleeping Mats",
+        "href": "/collections/sleeping-bags-mats"
+      },
+      {
+        "label": "Camping Pillows",
+        "href": "/collections/sleeping-mats-and-pillows"
+      },
+      {
+        "label": "Mattress Pumps and Inflators",
+        "href": "/collections/pumps-and-inflation"
+      }
+    ]
+  },
+  {
+    "label": "Tarps",
+    "links": [
+      {
+        "label": "Standard Tarps",
+        "href": "/collections/camping-tarps"
+      },
+      {
+        "label": "Superlight Tarps",
+        "href": "/collections/superlight-tarps"
+      },
+      {
+        "label": "Bushmen Tarps",
+        "href": "/collections/bushmen-tarps"
+      },
+      {
+        "label": "DD Hammocks Tarps",
+        "href": "/collections/dd-hammocks-tarps"
+      },
+      {
+        "label": "Tarp Accessories",
+        "href": "/collections/camping-sleeping-accessories"
+      }
+    ]
+  },
+  {
+    "label": "Tents",
+    "links": [
+      {
+        "label": "1-person Tents",
+        "href": "/collections/1-man-tents"
+      },
+      {
+        "label": "2-person Tents",
+        "href": "/collections/2-man-tents"
+      },
+      {
+        "label": "3 or More Person Tents",
+        "href": "/collections/3-or-more-person-tents"
+      },
+      {
+        "label": "Lightweight Hiking Tents",
+        "href": "/collections/lightweight-hiking-tents"
+      },
+      {
+        "label": "Tent Pegs and Poles",
+        "href": "/collections/camping-poles-pegs"
+      },
+      {
+        "label": "Tent and Hammock Parts",
+        "href": "/collections/tent-spares-add-ons"
+      }
+    ]
+  },
+  {
+    "label": "Tools, Gadgets and Accessories",
+    "links": [
+      {
+        "label": "Axes, Saws and Knives",
+        "href": "/collections/axes-and-tools"
+      },
+      {
+        "label": "Binoculars and Monoculars",
+        "href": "/collections/binoculars-and-monoculars"
+      },
+      {
+        "label": "Buck Knives",
+        "href": "/collections/buck-knives"
+      },
+      {
+        "label": "First Aid & Survival Kits",
+        "href": "/collections/camping-first-aid-kits"
+      },
+      {
+        "label": "Hygiene and Comfort",
+        "href": "/collections/camping-comforts"
+      },
+      {
+        "label": "Insect Repellent and Sun Protection",
+        "href": "/collections/insect-repellent"
+      },
+      {
+        "label": "Multi-Tools and Leatherman",
+        "href": "/collections/multi-tools-and-leatherman"
+      },
+      {
+        "label": "Sheaths",
+        "href": "/collections/knive-and-multi-tool-sheaths"
+      },
+      {
+        "label": "Single Blade Knives",
+        "href": "/collections/single-blade-knives"
+      },
+      {
+        "label": "Small Gadgets and Gizmos",
+        "href": "/collections/camping-accessories"
+      },
+      {
+        "label": "Waterproofing and Kit Repairs",
+        "href": "/collections/waterproof-camping-gear"
+      }
+    ]
+  }
+]

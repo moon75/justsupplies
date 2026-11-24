@@ -1,0 +1,148 @@
+{
+  "searchInputs": [
+    {
+      "placeholder": "Keywords ...",
+      "type": "text",
+      "outer": "<input type=\"text\" name=\"q\" id=\"predictive-search-drawer-input\" data-predictive-search-drawer-input=\"\" placeholder=\"Keywords ...\" aria-label=\"Keywords ...\" autocomplete=\"off\" autocorrect=\"off\" class=\"search-form__input search-bar__input\">"
+    },
+    {
+      "placeholder": "First name",
+      "type": "text",
+      "outer": "<input type=\"text\" name=\"contact[first_name]\" id=\"Contact_template--31707930394888__newsletter_wMUWEw-first-name\" class=\"Form__Input  input-group__field\" value=\"\" placeholder=\"First name\" aria-label=\"First name\" aria-required=\"true\" autocorrect=\"off\" autocapit"
+    },
+    {
+      "placeholder": "Last name",
+      "type": "text",
+      "outer": "<input type=\"text\" name=\"contact[last_name]\" id=\"Contact_template--31707930394888__newsletter_wMUWEw-last-name\" class=\"Form__Input  input-group__field\" value=\"\" placeholder=\"Last name\" aria-label=\"Last name\" aria-required=\"true\" autocorrect=\"off\" autocapitaliz"
+    },
+    {
+      "placeholder": "Email address",
+      "type": "email",
+      "outer": "<input type=\"email\" name=\"contact[email]\" id=\"Contact_template--31707930394888__newsletter_wMUWEw-email\" class=\"Form__Input  input-group__field\" value=\"\" placeholder=\"Email address\" aria-label=\"Email address\" aria-required=\"true\" autocorrect=\"off\" autocapitali"
+    },
+    {
+      "placeholder": "Email address",
+      "type": "email",
+      "outer": "<input type=\"email\" name=\"contact[email]\" id=\"ContactFooter_footer-1-email\" class=\"input-group__field newsletter__input\" value=\"\" placeholder=\"Email address\" aria-label=\"Email address\" aria-required=\"true\" required=\"\" autocorrect=\"off\" autocapitalize=\"off\">"
+    }
+  ],
+  "searchResults": {
+    "url": "https://www.woodtowater.co.uk/search?q=tent*",
+    "title": "Search results: 1000 results for “tent*” – Wood To Water Outdoors",
+    "heading": [
+      "\n            Search results:\n            1000 results for “tent”\n          "
+    ]
+  },
+  "cartDrawer": {
+    "classes": "Drawer Cart-Drawer show",
+    "rect": {
+      "x": 1040,
+      "y": 0,
+      "width": 400,
+      "height": 900
+    },
+    "display": "block",
+    "transform": "matrix(1, 0, 0, 1, 0, 0)",
+    "text": "Shopping Cart\nNotice: We cannot ship camping gas, knives or batteries to Northern Ireland, the Scottish Highlands nor the Channel Islands.\n\nNo products in the cart.\n\nKeep Shopping"
+  },
+  "mobileMenuButtons": [
+    {
+      "text": "Search",
+      "aria": null,
+      "cls": "header-search-button"
+    },
+    {
+      "text": "Search",
+      "aria": null,
+      "cls": "search-button__submit search-form__submit"
+    },
+    {
+      "text": "",
+      "aria": "Navigation",
+      "cls": "btn--link site-header__icon site-header__menu js-mobile-nav-toggle mobile-nav--open"
+    },
+    {
+      "text": "Add to cart",
+      "aria": null,
+      "cls": "btn product-form__cart-submit btn--primary "
+    },
+    {
+      "text": "Add to cart",
+      "aria": null,
+      "cls": "btn product-form__cart-submit btn--primary "
+    },
+    {
+      "text": "Add to cart",
+      "aria": null,
+      "cls": "btn product-form__cart-submit btn--primary "
+    },
+    {
+      "text": "Add to cart",
+      "aria": null,
+      "cls": "btn product-form__cart-submit btn--primary "
+    },
+    {
+      "text": "Submit",
+      "aria": null,
+      "cls": "btn btn--primary"
+    },
+    {
+      "text": "United Kingdom (GBP £)",
+      "aria": null,
+      "cls": "disclosure__toggle"
+    },
+    {
+      "text": "",
+      "aria": "Submit",
+      "cls": "btn  btn--primary newsletter__submit"
+    },
+    {
+      "text": "",
+      "aria": "Close cart",
+      "cls": "Drawer__Close"
+    },
+    {
+      "text": "Keep Shopping",
+      "aria": "Close cart",
+      "cls": "btn btn--primary keep_shopping__btn"
+    },
+    {
+      "text": "Follow on Shop",
+      "aria": null,
+      "cls": "group relative inline-flex h-9 items-center rounded-max bg-transparent"
+    },
+    {
+      "text": "Chat\n          \n        Unread",
+      "aria": "Chat. Open chat",
+      "cls": "activator"
+    }
+  ],
+  "mobileMenu": {
+    "menus": [
+      {
+        "cls": " hide_site_header__mobile_nav  grid grid--no-gutters  site-header__mobile-nav   without_categories_linklist  ",
+        "rect": {
+          "x": 0,
+          "y": 30,
+          "width": 390,
+          "height": 103.453125
+        },
+        "display": "flex",
+        "transform": "none",
+        "text": "Search\n0"
+      },
+      {
+        "cls": "mobile-nav",
+        "rect": {
+          "x": 0,
+          "y": 133,
+          "width": 390,
+          "height": 742
+        },
+        "display": "block",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "text": "New\nAll Products\nBack in Stock\nSale\nBrands\nBlog\nAbout\nContact\nCollabs"
+      }
+    ]
+  }
+}
