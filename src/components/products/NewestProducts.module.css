@@ -38,19 +38,19 @@
 
 .card {
   display: flex;
-  min-height: 520.39px;
+  height: 520px;
   flex-direction: column;
   padding: 17px 20px 20px;
   border-radius: 20px;
   background: #fff;
 }
 
-.imageWrap { position: relative; display: block; width: 100%; height: 206px; flex: none; }
+.imageWrap { position: relative; display: block; width: 100%; height: 181px; flex: none; }
 .image { object-fit: contain; }
 .details { padding-top: 22px; }
 .vendor { margin: 0; color: #858585; font-size: 14px; line-height: 20px; }
-.productTitle { margin: 0 0 24px; font-size: 22px; font-weight: 400; line-height: 22px; letter-spacing: 1px; }
-.price { margin: 0; font-size: 16px; font-weight: 700; line-height: 24px; }
+.productTitle { margin: 0 0 24px; font-size: 22px; font-weight: 400; line-height: 22px; letter-spacing: 1px; display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+.price { margin: 0 0 24px; font-size: 16px; font-weight: 700; line-height: 24px; }
 
 .action {
   display: flex;
@@ -74,7 +74,7 @@
 
 @media (min-width: 750px) and (max-width: 989px) {
   .heading { font-size: 42.12px; }
-  .card { min-height: 652.17px; }
+  .card { height: 520px; }
   .imageWrap { height: 121.16px; margin-top: 42px; }
   .details { padding-top: 73px; }
   .vendor { font-size: 12.6px; line-height: 18px; }
@@ -92,8 +92,8 @@
   .rail::-webkit-scrollbar { display: none; }
   .track { display: flex; width: max-content; }
   .slot { width: 281.5px; flex: none; padding: 0 22px 0 0; scroll-snap-align: start; }
-  .card { width: 259.5px; min-height: 518.89px; padding: 17px 20px 20px; }
-  .imageWrap { height: 206px; }
+  .card { width: 259.5px; height: 520px; padding: 17px 20px 20px; }
+  .imageWrap { height: 181px; }
   .details { padding-top: 22px; }
   .vendor { font-size: 14px; line-height: 20px; }
   .productTitle { margin-bottom: 24px; font-size: 19px; line-height: 19px; }

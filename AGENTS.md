@@ -24,3 +24,11 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Use local placeholder images until product images are provided.
 - Focus only on layout, styling, and functionality.
 - Product images will be replaced later.
+- Conserve the user's usage by avoiding unnecessary tool calls, analysis, and repeated checks.
+- This project is web-only and focuses on recreating the reference website design.
+- Build only the requested website UI, styling, and interactions.
+- Do not create, generate, edit, or research images or other assets.
+- The client will provide final images, logos, fonts, product data, and other assets.
+- Use lightweight local placeholders when an asset is missing.
+- Do not perform visual browser checks unless the user explicitly requests them.
+- The user will handle visual review and report any corrections.

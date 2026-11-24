@@ -27,15 +27,27 @@ function ProductCard({ product }: { product: FeaturedProduct }) {
   </article>;
 }
 
-export default function NewestProducts() {
-  return <section className={styles.section} aria-labelledby="newest-products-title">
+type ProductRailProps = {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  products?: readonly FeaturedProduct[];
+};
+
+export default function NewestProducts({
+  id = "newest-products",
+  eyebrow = "NOW AVAILABLE",
+  title = "NEWEST PRODUCTS",
+  products = newestProducts,
+}: ProductRailProps) {
+  return <section className={styles.section} aria-labelledby={`${id}-title`}>
     <header className={styles.header}>
-      <p className={styles.eyebrow}><span aria-hidden="true" />NOW AVAILABLE</p>
-      <h2 id="newest-products-title" className={styles.heading}>NEWEST PRODUCTS</h2>
+      <p className={styles.eyebrow}><span aria-hidden="true" />{eyebrow}</p>
+      <h2 id={`${id}-title`} className={styles.heading}>{title}</h2>
     </header>
     <div className={styles.rail}>
       <div className={styles.track}>
-        {newestProducts.map(product => <div className={styles.slot} key={product.title}><ProductCard product={product} /></div>)}
+        {products.map(product => <div className={styles.slot} key={product.title}><ProductCard product={product} /></div>)}
       </div>
     </div>
     <div className={styles.progress} aria-hidden="true"><span /></div>

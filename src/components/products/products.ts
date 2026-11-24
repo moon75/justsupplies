@@ -49,3 +49,12 @@ export const newestProducts: readonly FeaturedProduct[] = [
     action: "Add to cart",
   },
 ];
+
+// Placeholder data: reuses local product images until the client supplies restocked items.
+export const backInStockProducts: readonly FeaturedProduct[] = [
+  newestProducts[3],
+  newestProducts[1],
+  newestProducts[0],
+  newestProducts[4],
+  newestProducts[2],
+];
