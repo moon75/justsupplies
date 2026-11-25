@@ -4,7 +4,7 @@ import styles from "./CategoryShowcase.module.css";
 
 export default function CategoryShowcase() {
   return <section className={styles.section} aria-labelledby="category-title">
-    <Image className={styles.background} src="/hero/temporary-6.webp" alt="" fill sizes="100vw" />
+    <Image className={styles.background} src="https://www.woodtowater.co.uk/cdn/shop/files/Wood_to_Water_All_Collections_-_Credit_to_pexels-teemu-r-555088-1840404_2_-min.webp?v=1783956842&width=2000" alt="" fill sizes="100vw" unoptimized />
     <div className={styles.overlay} />
 
     <div className={styles.content}>
@@ -16,7 +16,7 @@ export default function CategoryShowcase() {
       <div className={styles.grid}>
         {categories.map(category => <a className={styles.card} href={category.href} key={category.title}>
           <span className={`${styles.imageWrap} ${category.crop === "circle" ? styles.circle : ""}`}>
-            <Image src={category.image} alt="" fill sizes="(max-width: 749px) 120px, 160px" className={styles.categoryImage} />
+            <Image src={category.image} alt="" fill sizes="(max-width: 749px) 120px, 160px" className={styles.categoryImage} unoptimized={category.image.startsWith("http")} />
           </span>
           <span className={styles.title}>{category.title}</span>
         </a>)}

@@ -1,4 +1,5 @@
-import { brands, promises, reviews } from "./content";
+import { brands, promises } from "./content";
+import ReviewsStrip from "./ReviewsStrip";
 import styles from "./HomeInfo.module.css";
 
 const icons = {
@@ -14,7 +15,7 @@ function Eyebrow({ children }: { children: string }) {
 export default function HomeInfo() {
   return <>
     <section className={styles.intro}>
-      <h2 className={styles.introTitle}>Camping Equipment and Outdoor Gear from Wood To Water</h2>
+      <h2 className={styles.introTitle}>Camping Equipment and Outdoor Gear from JustSupplies</h2>
       <p>We are an online retailer specialising in outdoor, camping and bushcraft products. Our experienced team have handpicked our product range to offer you the best products available backed by our exceptional product knowledge and customer services.</p>
       <p>All our orders are dispatched from our fully stocked warehouse based in Fleet, Hampshire using fast shipping and dispatch. This means you spend less time indoors waiting for your order and more time out under canvas.</p>
     </section>
@@ -33,28 +34,15 @@ export default function HomeInfo() {
       </div>
     </section>
 
-    <section className={styles.reviews} aria-label="Customer reviews">
-      <div className={styles.summary}>
-        <p className={styles.excellent}>EXCELLENT</p>
-        <p className={styles.stars} aria-label="5 out of 5 stars">★★★★★</p>
-        <p className={styles.based}>Based on <u>2,439 reviews</u></p>
-        <p className={styles.source}>Trustindex</p>
-      </div>
-      <div className={styles.reviewRail}>
-        {reviews.map((review, index) => <article className={styles.review} key={index}>
-          <div className={styles.reviewHead}>
-            <span className={styles.avatar} aria-hidden="true" />
-            <div><p className={styles.reviewName}>{review.name}</p><p className={styles.reviewDate}>{review.date}</p></div>
-          </div>
-          <p className={styles.reviewText}>{review.text}</p>
-        </article>)}
-      </div>
-    </section>
+    <ReviewsStrip />
 
     <section className={styles.brands} aria-labelledby="brands-title">
       <h2 id="brands-title" className={styles.heading}>OUR TRUSTED BRANDS</h2>
       <ul className={styles.brandGrid}>
-        {brands.map(brand => <li key={brand}><a className={styles.brand} href={`/collections/${brand.toLowerCase().replace(/\s+/g, "-")}`}>{brand}</a></li>)}
+        {brands.map(brand => <li key={brand.href}><a className={styles.brand} href={brand.href} aria-label={brand.name}>
+          {/* eslint-disable-next-line @next/next/no-img-element -- remote logo from client-approved source */}
+          <img src={brand.logo} alt="" loading="lazy" decoding="async" />
+        </a></li>)}
       </ul>
     </section>
   </>;

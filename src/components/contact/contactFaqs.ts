@@ -1,0 +1,7 @@
+export const contactFaqs = [
+  { question: "How long will shipping take?", answer: "Orders placed before 1PM (Monday to Friday) are dispatched the same day. UK orders use a 1-2 day service and most arrive the next working day. International orders usually take 7-10 working days, excluding customs, as international couriers collect only 2-3 times a week." },
+  { question: "How can I track my order?", answer: "We email your tracking number when your order is dispatched; it usually becomes active that evening. If you haven't received it by the next day, please check your spam folder." },
+  { question: "How can I return an item?", answer: "Items can be returned within 14 days of delivery in brand-new condition with their packaging. If you haven't contacted us first, include a note explaining the return along with your contact details. Faulty items are handled case by case. Send returns to: JustSupplies, Unit 6 Quantum Business Park, Beacon Hill Road, Fleet, Hampshire, GU52 8EA." },
+  { question: "What are your working hours?", answer: "Monday to Friday, 9:30AM to 5PM. During these hours the warehouse is open for collections and our phone line and email are active." },
+  { question: "Can I collect my order?", answer: "Yes. Choose 'collection/pick up' at checkout and visit us during opening hours (9:30AM to 5PM, Monday to Friday). Collections are usually ready within 2 hours of ordering while the warehouse is open." },
+] as const;

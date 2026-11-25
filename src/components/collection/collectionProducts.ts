@@ -2,6 +2,7 @@ export type CollectionProduct = {
   vendor: string;
   title: string;
   price: number;
+  compareAtPrice?: number;
   image: string;
   href: string;
   action: "Choose Options" | "Add to cart";
@@ -35,3 +36,20 @@ export const newProductFaqs = [
   { question: "Can I return a new product if it's not right?", answer: "Answer to be supplied by the client." },
   { question: "Can I collect my order?", answer: "Answer to be supplied by the client." },
 ] as const;
+
+// Placeholder clearance items: reuses local images until client product data is supplied.
+export const clearanceProducts: readonly CollectionProduct[] = [
+  { vendor: "Highlander Outdoor", title: "Highlander Halo Smock - Olive Green (Various Sizes)", price: 50, compareAtPrice: 60, image: "/products/poncho.webp", href: "/products/halo-smock-olive", action: "Choose Options" },
+  { vendor: "Highlander Outdoor", title: "Highlander Reversible Down Jacket, Black and Olive (Various sizes)", price: 70, compareAtPrice: 79.99, image: "/products/poncho.webp", href: "/products/reversible-down-jacket", action: "Choose Options" },
+  { vendor: "Red Paddle Co", title: "Red Luxury Towelling Changing Robe Navy (Various Sizes)", price: 24, compareAtPrice: 28, image: "/products/glasses-case.webp", href: "/products/luxury-towelling-robe-navy", action: "Add to cart" },
+  { vendor: "Highlander Outdoor", title: "Highlander Halo Smock - HMTC Camo (Various Sizes)", price: 50, compareAtPrice: 60, image: "/products/poncho.webp", href: "/products/halo-smock-hmtc", action: "Choose Options" },
+  { vendor: "Camelbak", title: "Camelbak Waterproof Hiking Jacket (Various Colours)", price: 45, compareAtPrice: 49.99, image: "/products/cooking-set.webp", href: "/products/waterproof-hiking-jacket", action: "Choose Options" },
+  { vendor: "Easy Camp", title: "Easy Camp Hooded Insulated Jacket Camo", price: 35, compareAtPrice: 49.99, image: "/products/kindling.webp", href: "/products/hooded-insulated-jacket", action: "Choose Options" },
+];
+
+// Placeholder brand counts for the clearance filter, from the reference page.
+export const clearanceBrandCounts: Record<string, number> = {
+  "BCB International": 1, Camelbak: 4, "Easy Camp": 1, "Fire Maple Gear": 1, "Heat2Eat Self Steamers": 1,
+  "Highlander Outdoor": 12, "Klean Kanteen": 1, NGT: 8, "Outwell Outdoors": 4, "Red Paddle Co": 7,
+  "Robens outdoors": 1, Vango: 1,
+};

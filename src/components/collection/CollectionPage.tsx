@@ -18,23 +18,34 @@ function BagIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 8h12l1 13H5L6 8Zm3-1V5a3 3 0 0 1 6 0v2h-2V5a1 1 0 0 0-2 0v2H9Z" /></svg>;
 }
 
-function CheckList({ items, selected, onToggle }: { items: readonly string[]; selected?: string[]; onToggle?: (item: string) => void }) {
+function CheckList({ name, items, selected, onToggle, label = item => item }: { name: string; items: readonly string[]; selected?: string[]; onToggle?: (item: string) => void; label?: (item: string) => string }) {
   const [showAll, setShowAll] = useState(false);
   const visible = showAll ? items : items.slice(0, 5);
   return <>
     <ul className={styles.checkList}>
       {visible.map(item => <li key={item}><label>
         <input type="checkbox" checked={selected?.includes(item) ?? undefined} onChange={() => onToggle?.(item)} />
-        <span>{item}</span>
+        <span>{label(item)}</span>
       </label></li>)}
     </ul>
-    {items.length > 5 && <button type="button" className={styles.showAll} onClick={() => setShowAll(!showAll)}>{showAll ? "Show less" : "Show all"}</button>}
+    {items.length > 5 && <button type="button" className={styles.showAll} onClick={() => setShowAll(!showAll)}>{showAll ? "Show less" : `Show all ${name}`}</button>}
   </>;
 }
 
-export default function CollectionPage({ title, products }: { title: string; products: readonly CollectionProduct[] }) {
+type CollectionPageProps = {
+  title: string;
+  description?: string;
+  products: readonly CollectionProduct[];
+  /** Brand filter options with counts; defaults to brands found in `products`. */
+  brandCounts?: Record<string, number>;
+  /** Show the Meal Type and Dietary Requirement filter groups. */
+  foodFilters?: boolean;
+};
+
+export default function CollectionPage({ title, description, products, brandCounts, foodFilters = true }: CollectionPageProps) {
   const maxPrice = Math.ceil(Math.max(...products.map(p => p.price)));
-  const brands = useMemo(() => [...new Set(products.map(p => p.vendor))].sort(), [products]);
+  const counts = useMemo(() => brandCounts ?? products.reduce<Record<string, number>>((acc, p) => ({ ...acc, [p.vendor]: (acc[p.vendor] ?? 0) + 1 }), {}), [brandCounts, products]);
+  const brands = useMemo(() => Object.keys(counts).sort((a, b) => a.localeCompare(b)), [counts]);
   const [query, setQuery] = useState("");
   const [minValue, setMinValue] = useState(0);
   const [maxValue, setMaxValue] = useState(maxPrice);
@@ -86,6 +97,8 @@ export default function CollectionPage({ title, products }: { title: string; pro
       </div>
     </div>
 
+    {description && <p className={styles.description}>{description}</p>}
+
     <div className={styles.layout}>
       <aside className={styles.sidebar} aria-label="Filters">
         <label className={styles.search}>
@@ -105,29 +118,34 @@ export default function CollectionPage({ title, products }: { title: string; pro
 
         <details className={styles.group} open>
           <summary>Brand</summary>
-          <CheckList items={brands} selected={selectedBrands} onToggle={toggleBrand} />
+          <CheckList name="Brand" items={brands} selected={selectedBrands} onToggle={toggleBrand} label={brand => `${brand} (${counts[brand]})`} />
         </details>
 
+        {foodFilters && <>
         <details className={styles.group} open>
           <summary>Meal Type</summary>
-          <CheckList items={mealTypes} />
+          <CheckList name="Meal Type" items={mealTypes} />
         </details>
 
         <details className={styles.group} open>
           <summary>Dietary Requirement</summary>
-          <CheckList items={dietary} />
+          <CheckList name="Dietary Requirement" items={dietary} />
         </details>
+        </>}
       </aside>
 
       <div className={`${styles.grid} ${view === "list" ? styles.list : ""}`}>
         {visible.map(product => <article className={styles.card} key={product.href}>
           <a className={styles.imageWrap} href={product.href} aria-label={product.title}>
+            {product.compareAtPrice && product.compareAtPrice > product.price && <span className={styles.badge}>{formatPrice(product.compareAtPrice - product.price)} Off</span>}
             <Image className={styles.image} src={product.image} alt={product.title} fill sizes="(max-width: 749px) 45vw, 200px" />
           </a>
           <div className={styles.details}>
             <p className={styles.vendor}>{product.vendor}</p>
             <h2 className={styles.productTitle}><a href={product.href}>{product.title}</a></h2>
-            <p className={styles.price}>{formatPrice(product.price)}</p>
+            {product.compareAtPrice && product.compareAtPrice > product.price
+              ? <p className={styles.price}><span className={styles.salePrice}>{formatPrice(product.price)}</span> <s className={styles.comparePrice}>{formatPrice(product.compareAtPrice)}</s></p>
+              : <p className={styles.price}>{formatPrice(product.price)}</p>}
             <a className={styles.action} href={product.href}>
               <span>{product.action}</span>
               {product.action === "Add to cart" ? <BagIcon /> : <ArrowIcon />}

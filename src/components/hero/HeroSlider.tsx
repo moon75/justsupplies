@@ -59,6 +59,7 @@ export default function HeroSlider() {
           <Image
             className={styles.image}
             src={slide.image}
+            unoptimized={slide.image.startsWith("http")}
             alt=""
             fill
             sizes="100vw"

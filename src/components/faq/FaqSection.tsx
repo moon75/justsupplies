@@ -3,8 +3,10 @@ import styles from "./FaqSection.module.css";
 
 export default function FaqSection() {
   return <section className={styles.section} aria-labelledby="faq-title">
-    {/* Placeholder until client images are supplied */}
-    <div className={styles.media} aria-hidden="true" />
+    <div className={styles.media}>
+      {/* eslint-disable-next-line @next/next/no-img-element -- remote image from client-approved source */}
+      <img src="https://www.woodtowater.co.uk/cdn/shop/files/Toaks_Lightweight_Titanium_Cup_-_Wood_to_Water-min.webp?v=1783339798&width=1600" alt="" loading="lazy" decoding="async" />
+    </div>
     <div className={styles.panel}>
       <div className={styles.content}>
         <p className={styles.eyebrow}><span aria-hidden="true" />IF YOU&apos;D LIKE TO KNOW MORE...</p>

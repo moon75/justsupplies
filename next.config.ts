@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "www.woodtowater.co.uk", pathname: "/cdn/shop/**" }],
+  },
 };
 
 export default nextConfig;
