@@ -22,7 +22,7 @@ export default function ScrollReveal() {
       if (el.classList.contains("is-revealed") || el.closest(".reveal:not(:scope)")) return;
       el.classList.add("reveal");
       // Stagger cards inside grids/rows so they cascade in.
-      el.querySelectorAll<HTMLElement>('[class*="__grid"] > *, [class*="__track"] > *, [class*="__items"] > *').forEach(child => {
+      el.querySelectorAll<HTMLElement>('[class*="_grid"] > *, [class*="_track"] > *, [class*="_items"] > *').forEach(child => {
         const siblings = child.parentElement ? Array.from(child.parentElement.children) : [];
         child.style.setProperty("--i", String(Math.min(siblings.indexOf(child), 8)));
         child.classList.add("reveal-item");
