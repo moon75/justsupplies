@@ -10,7 +10,6 @@ export default function ScrollReveal() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
@@ -22,6 +21,12 @@ export default function ScrollReveal() {
     document.querySelectorAll<HTMLElement>(SELECTOR).forEach(el => {
       if (el.classList.contains("is-revealed") || el.closest(".reveal:not(:scope)")) return;
       el.classList.add("reveal");
+      // Stagger cards inside grids/rows so they cascade in.
+      el.querySelectorAll<HTMLElement>('[class*="__grid"] > *, [class*="__track"] > *, [class*="__items"] > *').forEach(child => {
+        const siblings = child.parentElement ? Array.from(child.parentElement.children) : [];
+        child.style.setProperty("--i", String(Math.min(siblings.indexOf(child), 8)));
+        child.classList.add("reveal-item");
+      });
       observer.observe(el);
     });
     return () => observer.disconnect();

@@ -50,3 +50,61 @@ a { color: inherit; text-decoration: none; }
 /* Card add-to-cart buttons reuse link styles */
 .atc-button { border: 0; font: inherit; cursor: pointer; text-align: left; }
 
+
+/* ---------- Happy micro-animations (site-wide) ---------- */
+@keyframes js-fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes js-pop { 0% { transform: scale(1); } 40% { transform: scale(1.45); } 70% { transform: scale(0.9); } 100% { transform: scale(1); } }
+@keyframes js-wiggle { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-8deg); } 75% { transform: rotate(8deg); } }
+
+@media all {
+  /* Gentle page entrance */
+  main#main-content { animation: js-fade-up 0.5s ease-out both; }
+
+  /* Staggered cards inside revealed grids/rows (set by ScrollReveal) */
+  .reveal-item { opacity: 0; transform: translateY(24px) scale(0.98); transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1); transition-delay: calc(var(--i, 0) * 70ms); }
+  .is-revealed .reveal-item { opacity: 1; transform: none; }
+
+  /* Cards lift and their images zoom on hover */
+  [class*="-module__"][class$="__card"] { transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease; }
+  [class*="-module__"][class$="__card"]:hover { transform: translateY(-6px); box-shadow: 0 14px 34px rgb(0 0 0 / 10%); }
+  [class*="-module__"][class$="__card"] img { transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  [class*="-module__"][class$="__card"]:hover img { transform: scale(1.06); }
+
+  /* Buttons: springy hover and press */
+  main button, main [class*="__action"], main [class*="__cta"], main [class*="__primary"], main [class*="__apply"], main [class*="__pay"], main [class*="__addToCart"] {
+    transition: transform 0.2s cubic-bezier(0.3, 1.6, 0.5, 1), box-shadow 0.2s ease, filter 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  }
+  main button:not(:disabled):active, main [class*="__action"]:active, main [class*="__cta"]:active, main [class*="__primary"]:active { transform: scale(0.96); }
+
+  /* Arrow icons nudge forward, bag icons wiggle */
+  [class*="__action"] svg, [class*="__cta"] svg, [class*="__readMore"] { transition: transform 0.25s ease; }
+  [class*="__action"]:hover svg { animation: js-wiggle 0.4s ease; }
+  [class*="__cta"]:hover svg { transform: translateX(4px); }
+
+  /* Header links get a soft underline grow */
+  header nav a, header [class*="__navEntry"] > button { background-image: linear-gradient(currentColor, currentColor); background-size: 0 2px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size 0.3s ease; }
+  header nav a:hover, header [class*="__navEntry"] > button:hover { background-size: 100% 2px; }
+
+  /* Cart badge pops when the count changes */
+  .cart-pop { animation: js-pop 0.5s ease; }
+
+  /* Footer & form inputs */
+  input:focus, select:focus, textarea:focus { transition: box-shadow 0.2s ease, border-color 0.2s ease; }
+}
+
+/* Button hover (always on, matches reference): lighter green pill grows from the centre */
+[class*="__action"], [class*="__cta"], [class*="__primary"], main [class*="__apply"], main [class*="__pay"], main [class*="__addToCart"] { position: relative; isolation: isolate; overflow: hidden; }
+[class*="__action"]::before, [class*="__cta"]::before, [class*="__primary"]::before, main [class*="__apply"]::before, main [class*="__pay"]::before, main [class*="__addToCart"]::before {
+  content: ""; position: absolute; z-index: -1; top: 50%; left: 50%; width: 0; height: 0; border-radius: 50px; background: #129e7e;
+  transition: all 0.3s;
+}
+[class*="__action"]:hover::before, [class*="__cta"]:hover::before, [class*="__primary"]:hover::before, main [class*="__apply"]:hover::before, main [class*="__pay"]:hover::before, main [class*="__addToCart"]:not(:disabled):hover::before { top: -1px; left: -1px; width: calc(100% + 2px); height: calc(100% + 2px); }
+
+/* Add-to-cart confirmation */
+@keyframes js-check { 0% { transform: scale(0) rotate(-30deg); } 60% { transform: scale(1.4) rotate(10deg); } 100% { transform: scale(1); } }
+.is-added { background-color: #129e7e !important; }
+.atc-check { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #fff; color: #129e7e; font-size: 13px; font-weight: 800; }
+@media all {
+  .is-added { animation: js-pop 0.45s ease; }
+  .atc-check { animation: js-check 0.45s cubic-bezier(0.3, 1.6, 0.5, 1); }
+}

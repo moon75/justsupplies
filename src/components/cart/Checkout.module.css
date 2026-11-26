@@ -102,3 +102,29 @@ select.input { padding-top: 14px; appearance: auto; }
   .row2 { grid-template-columns: 1fr; gap: 0; }
   .expressBtns { grid-template-columns: 1fr; }
 }
+
+/* ---- Animations ---- */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes bump { 0% { transform: scale(1); } 40% { transform: scale(1.12); } 100% { transform: scale(1); } }
+@keyframes checkPop { 0% { transform: scale(0) rotate(-45deg); opacity: 0; } 60% { transform: scale(1.25) rotate(8deg); opacity: 1; } 100% { transform: scale(1); } }
+@keyframes confetti { 0% { transform: translate(0, 0) rotate(0); opacity: 1; } 100% { transform: translate(var(--x), 160px) rotate(540deg); opacity: 0; } }
+.confetti { position: relative; height: 0; }
+.confetti i { position: absolute; top: 40px; left: 25px; width: 8px; height: 12px; border-radius: 2px; opacity: 0; }
+@media all {
+  .section, .express, .or, .pay { animation: fadeUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  .express { animation-delay: 0.05s; } .or { animation-delay: 0.1s; }
+  form > .section:nth-of-type(1) { animation-delay: 0.15s; } form > .section:nth-of-type(2) { animation-delay: 0.22s; } form > .section:nth-of-type(3) { animation-delay: 0.29s; }
+  form > .section:nth-of-type(4) { animation-delay: 0.36s; } form > .section:nth-of-type(5) { animation-delay: 0.43s; } form > .pay { animation-delay: 0.5s; }
+  .item { animation: fadeUp 0.45s ease both; }
+  .item:nth-child(2) { animation-delay: 80ms; } .item:nth-child(3) { animation-delay: 160ms; } .item:nth-child(n+4) { animation-delay: 240ms; }
+  .bump { animation: bump 0.4s ease; }
+  .radio { transition: background-color 0.25s ease, border-color 0.25s ease; }
+  .expressBtns button { transition: transform 0.2s ease, filter 0.2s ease; }
+  .expressBtns button:hover { transform: translateY(-2px); filter: brightness(1.08); }
+  .check { animation: checkPop 0.6s cubic-bezier(0.3, 1.6, 0.5, 1) both 0.15s; }
+  .thanks h1, .thanks .box, .thanks > .pay { animation: fadeUp 0.5s ease both 0.35s; }
+  .confetti i { animation: confetti 1.4s cubic-bezier(0.2, 0.6, 0.4, 1) forwards; animation-delay: calc(var(--i) * 25ms); }
+  .confetti i:nth-child(4n+1) { background: #0a5947; --x: -90px; } .confetti i:nth-child(4n+2) { background: #2fd3a4; --x: 80px; }
+  .confetti i:nth-child(4n+3) { background: #ffc439; --x: -40px; } .confetti i:nth-child(4n) { background: #ff6b6b; --x: 120px; }
+  .confetti i:nth-child(3n) { --x: 30px; } .confetti i:nth-child(5n) { --x: -130px; } .confetti i:nth-child(7n) { --x: 160px; }
+}

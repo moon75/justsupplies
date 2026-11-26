@@ -84,3 +84,11 @@
   .mobileSubNav > a, .mobileSubNav > div > button, .mobileNested a { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 42px; padding: 10px; border: 0; background: none; color: #fff; font-size: 14px; text-align: left; }
   .mobileNested { padding-left: 15px; }
 }
+
+/* Cart drawer slide + backdrop fade */
+@keyframes drawerIn { from { transform: translateX(100%); } to { transform: none; } }
+@keyframes backdropIn { from { opacity: 0; } to { opacity: 1; } }
+@media all {
+  .cartDrawer { animation: drawerIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .cartBackdrop { animation: backdropIn 0.3s ease; }
+}

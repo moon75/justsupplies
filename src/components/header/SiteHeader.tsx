@@ -85,14 +85,14 @@ export function SiteHeader() {
         </nav>
         <form className={styles.desktopSearch} role="search" action={`${shopOrigin}/search`} method="get"><input aria-label="Keywords ..." placeholder="Keywords ..." value={query} onChange={event => setQuery(event.target.value)} /><input type="hidden" name="q" value={`${query.trim()}*`} /><button type="submit" aria-label="Search"><Icon name="search" size={21} /></button></form>
         <button type="button" className={`${styles.iconButton} ${styles.tabletSearch}`} aria-label="Search" onClick={() => setMobileSearch(!mobileSearch)}><Icon name="search" size={21} /></button>
-        <button type="button" className={`${styles.iconButton} ${styles.desktopCart}`} aria-label="Shopping cart" onClick={() => setCartOpen(true)}><Icon name="bag" size={21} /><span className={styles.cartCount}>{cartCount}</span></button>
+        <button type="button" className={`${styles.iconButton} ${styles.desktopCart}`} aria-label="Shopping cart" onClick={() => setCartOpen(true)}><Icon name="bag" size={21} /><span key={cartCount} className={`${styles.cartCount} ${cartCount ? "cart-pop" : ""}`}>{cartCount}</span></button>
       </div>
 
       <div className={styles.mobileBar}>
         <Link className={styles.mobileLogo} href="/" aria-label="justsupplies home"><span className={styles.logoArt} aria-hidden="true" /></Link>
         <div className={styles.mobileActions}>
           <button type="button" className={styles.mobileIcon} aria-label="Search" aria-expanded={mobileSearch} onClick={() => { setMobileSearch(!mobileSearch); setMobileOpen(false); }}><Icon name="search" size={22} /></button>
-          <button type="button" className={styles.mobileIcon} aria-label="Shopping cart" onClick={() => setCartOpen(true)}><Icon name="bag" size={20} /><span className={styles.cartCount}>{cartCount}</span></button>
+          <button type="button" className={styles.mobileIcon} aria-label="Shopping cart" onClick={() => setCartOpen(true)}><Icon name="bag" size={20} /><span key={cartCount} className={`${styles.cartCount} ${cartCount ? "cart-pop" : ""}`}>{cartCount}</span></button>
           <button type="button" className={styles.mobileIcon} aria-label="Navigation" aria-expanded={mobileOpen} onClick={() => { setMobileOpen(!mobileOpen); setMobileSearch(false); }}><Icon name={mobileOpen ? "close" : "menu"} size={28} /></button>
         </div>
       </div>

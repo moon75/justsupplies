@@ -32,8 +32,8 @@
   letter-spacing: 2px;
 }
 
-.rail { width: 100%; padding-left: 55px; overflow: hidden; }
-.track { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); width: calc(100vw - 55px); }
+.rail { width: 100%; padding: 0 55px 0 44px; overflow: hidden; }
+.track { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); width: 100%; }
 .slot { min-width: 0; padding-left: 11px; }
 
 .card {
@@ -74,6 +74,9 @@
 
 @media (min-width: 750px) and (max-width: 989px) {
   .heading { font-size: 42.12px; }
+  .rail { padding-right: 0; overflow-x: auto; scrollbar-width: none; scroll-snap-type: x mandatory; }
+  .track { grid-template-columns: repeat(5, 36vw); width: max-content; padding-right: 22px; }
+  .slot { scroll-snap-align: start; }
   .card { height: 520px; }
   .imageWrap { height: 121.16px; margin-top: 42px; }
   .details { padding-top: 73px; }

@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { Product } from "@/lib/catalog";
 import { formatPrice } from "@/lib/format";
 import { useCart } from "@/components/cart/CartContext";
+import { useAdded } from "@/components/cart/useAdded";
 import styles from "./Product.module.css";
 
 const infoTabs = [
@@ -17,6 +18,7 @@ export default function ProductMain({ product }: { product: Product }) {
   const [selected, setSelected] = useState<string[]>(product.variants[0]?.options ?? []);
   const [qty, setQty] = useState(1);
   const { add } = useCart();
+  const [added, flash] = useAdded();
 
   const variant = product.variants.find(v => v.options.every((o, i) => o === selected[i])) ?? product.variants[0];
   const price = variant?.price ?? product.price;
@@ -79,9 +81,9 @@ export default function ProductMain({ product }: { product: Product }) {
         </div>
       </div>
 
-      <button type="button" className={styles.addToCart} disabled={!available} onClick={() => add({ handle: product.handle, title: product.title, variant: product.options.length ? variant?.title : undefined, variantId: product.options.length ? variant?.id : undefined, price, image: variant?.image ?? images[0] }, qty)}>
-        {available ? "Add to cart" : "Sold out"}
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 8V6a5 5 0 0 1 10 0v2h3l-1 14H5L4 8h3Zm2 0h6V6a3 3 0 0 0-6 0v2Z" /></svg>
+      <button type="button" className={`${styles.addToCart} ${added ? "is-added" : ""}`} disabled={!available} onClick={() => { flash(); add({ handle: product.handle, title: product.title, variant: product.options.length ? variant?.title : undefined, variantId: product.options.length ? variant?.id : undefined, price, image: variant?.image ?? images[0] }, qty); }}>
+        {added ? <><span>Added to cart!</span><span className="atc-check" aria-hidden="true">✓</span></> : <>{available ? "Add to cart" : "Sold out"}
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 8V6a5 5 0 0 1 10 0v2h3l-1 14H5L4 8h3Zm2 0h6V6a3 3 0 0 0-6 0v2Z" /></svg></>}
       </button>
 
       <p className={styles.stock}>

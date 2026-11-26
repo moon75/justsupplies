@@ -18,9 +18,9 @@ export default function CartPage() {
       <aside className={styles.summary}>
         <h2>Order summary</h2>
         <FreeShippingBar />
-        <p className={styles.row}><span>Subtotal</span><span>{money(subtotal)}</span></p>
+        <p className={styles.row}><span>Subtotal</span><span key={subtotal} className={styles.bump}>{money(subtotal)}</span></p>
         <p className={styles.row}><span>Shipping</span><span>{shipping ? money(shipping) : "Free"}</span></p>
-        <p className={styles.rowTotal}><span>Total</span><span>{money(subtotal + shipping)} GBP</span></p>
+        <p className={styles.rowTotal}><span>Total</span><span key={subtotal + shipping} className={styles.bump}>{money(subtotal + shipping)} GBP</span></p>
         <p className={styles.note}>Tax included.</p>
         <a className={styles.primary} href="/checkout">Checkout</a>
         <a className={styles.secondary} href="/collections/all">Continue shopping</a>

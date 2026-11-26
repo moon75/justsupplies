@@ -1,5 +1,6 @@
 "use client";
 
+import type React from "react";
 import { useState, type FormEvent } from "react";
 import { FREE_SHIPPING, money, useCart } from "./CartContext";
 import styles from "./Checkout.module.css";
@@ -32,7 +33,7 @@ function Summary({ shipping, total, open }: { shipping: number | null; total: nu
     <dl className={styles.totals}>
       <div><dt>Subtotal · {items.reduce((n, i) => n + i.qty, 0)} items</dt><dd>{money(subtotal)}</dd></div>
       <div><dt>Shipping</dt><dd>{shipping === null ? <span className={styles.muted}>Enter shipping address</span> : shipping ? money(shipping) : "FREE"}</dd></div>
-      <div className={styles.total}><dt>Total</dt><dd><small>GBP</small> {money(total)}</dd></div>
+      <div className={styles.total}><dt>Total</dt><dd key={total} className={styles.bump}><small>GBP</small> {money(total)}</dd></div>
       <p className={styles.muted}>Including {money(total / 6)} in taxes</p>
     </dl>
   </div>;
@@ -60,6 +61,7 @@ export default function CheckoutPage() {
 
   if (orderNo) return <div className={styles.shell} data-checkout>
     <div className={styles.thanks}>
+      <div className={styles.confetti} aria-hidden="true">{Array.from({ length: 14 }, (_, i) => <i key={i} style={{ "--i": i } as React.CSSProperties} />)}</div>
       <div className={styles.check} aria-hidden="true">✓</div>
       <p className={styles.muted}>Confirmation {orderNo}</p>
       <h1>Thank you!</h1>

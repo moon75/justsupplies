@@ -19,13 +19,13 @@ export function CartLines({ compact = false }: { compact?: boolean }) {
         <div className={styles.lineActions}>
           <div className={styles.qty}>
             <button type="button" onClick={() => setQty(item.key, item.qty - 1)} aria-label="Decrease quantity">−</button>
-            <span>{item.qty}</span>
+            <span key={item.qty} className={styles.bump}>{item.qty}</span>
             <button type="button" onClick={() => setQty(item.key, item.qty + 1)} aria-label="Increase quantity">+</button>
           </div>
           <button type="button" className={styles.remove} onClick={() => remove(item.key)}>Remove</button>
         </div>
       </div>
-      <p className={styles.lineTotal}>{money(item.price * item.qty)}</p>
+      <p key={item.qty} className={`${styles.lineTotal} ${styles.bump}`}>{money(item.price * item.qty)}</p>
     </li>)}
   </ul>;
 }
@@ -33,7 +33,7 @@ export function CartLines({ compact = false }: { compact?: boolean }) {
 export function FreeShippingBar() {
   const { subtotal } = useCart();
   const left = FREE_SHIPPING - subtotal;
-  return <div className={styles.freeBar}>
+  return <div className={`${styles.freeBar} ${left <= 0 ? styles.freeDone : ""}`}>
     <p>{left > 0 ? <>Spend <strong>{money(left)}</strong> more for free shipping</> : <strong>You qualify for free shipping!</strong>}</p>
     <div className={styles.track}><span style={{ width: `${Math.min(100, (subtotal / FREE_SHIPPING) * 100)}%` }} /></div>
   </div>;
@@ -49,7 +49,7 @@ export function CartDrawerBody({ onClose }: { onClose: () => void }) {
     <FreeShippingBar />
     <CartLines compact />
     <div className={styles.drawerFooter}>
-      <p className={styles.row}><span>Subtotal</span><strong>{money(subtotal)}</strong></p>
+      <p className={styles.row}><span>Subtotal</span><strong key={subtotal} className={styles.bump}>{money(subtotal)}</strong></p>
       <p className={styles.note}>Tax included. Shipping calculated at checkout.</p>
       <a className={styles.primary} href="/checkout">Checkout</a>
       <a className={styles.secondary} href="/cart">View cart</a>
