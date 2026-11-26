@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AddToCartButton from "@/components/cart/AddToCartButton";
 import { newestProducts, type FeaturedProduct } from "./products";
 import styles from "./NewestProducts.module.css";
 
@@ -20,10 +21,9 @@ function ProductCard({ product }: { product: FeaturedProduct }) {
       <h3 className={styles.productTitle}><a href={product.href}>{product.title}</a></h3>
       <p className={styles.price}>{product.price}</p>
     </div>
-    <a className={styles.action} href={product.href}>
-      <span>{product.action}</span>
-      {product.action === "Add to cart" ? <BagIcon /> : <ArrowIcon />}
-    </a>
+    {product.action === "Add to cart"
+      ? <AddToCartButton className={styles.action} href={product.href} title={product.title} price={product.price} image={product.image}><span>{product.action}</span><BagIcon /></AddToCartButton>
+      : <a className={styles.action} href={product.href}><span>{product.action}</span><ArrowIcon /></a>}
   </article>;
 }
 

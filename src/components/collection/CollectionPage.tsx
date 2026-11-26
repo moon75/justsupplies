@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import AddToCartButton from "@/components/cart/AddToCartButton";
 import { useMemo, useState } from "react";
 import { dietary, mealTypes, type CollectionProduct } from "./collectionProducts";
 import styles from "./CollectionPage.module.css";
@@ -43,7 +44,7 @@ type CollectionPageProps = {
 };
 
 export default function CollectionPage({ title, description, products, brandCounts, foodFilters = true }: CollectionPageProps) {
-  const maxPrice = Math.ceil(Math.max(...products.map(p => p.price)));
+  const maxPrice = Math.ceil(Math.max(0, ...products.map(p => p.price)));
   const counts = useMemo(() => brandCounts ?? products.reduce<Record<string, number>>((acc, p) => ({ ...acc, [p.vendor]: (acc[p.vendor] ?? 0) + 1 }), {}), [brandCounts, products]);
   const brands = useMemo(() => Object.keys(counts).sort((a, b) => a.localeCompare(b)), [counts]);
   const [query, setQuery] = useState("");
@@ -146,10 +147,9 @@ export default function CollectionPage({ title, description, products, brandCoun
             {product.compareAtPrice && product.compareAtPrice > product.price
               ? <p className={styles.price}><span className={styles.salePrice}>{formatPrice(product.price)}</span> <s className={styles.comparePrice}>{formatPrice(product.compareAtPrice)}</s></p>
               : <p className={styles.price}>{formatPrice(product.price)}</p>}
-            <a className={styles.action} href={product.href}>
-              <span>{product.action}</span>
-              {product.action === "Add to cart" ? <BagIcon /> : <ArrowIcon />}
-            </a>
+            {product.action === "Add to cart"
+              ? <AddToCartButton className={styles.action} href={product.href} title={product.title} price={product.price} image={product.image}><span>{product.action}</span><BagIcon /></AddToCartButton>
+              : <a className={styles.action} href={product.href}><span>{product.action}</span><ArrowIcon /></a>}
           </div>
         </article>)}
         {!visible.length && <p className={styles.empty}>No products match these filters.</p>}

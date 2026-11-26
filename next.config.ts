@@ -5,7 +5,10 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   images: {
-    remotePatterns: [{ protocol: "https", hostname: "www.woodtowater.co.uk", pathname: "/cdn/shop/**" }],
+    remotePatterns: [
+      { protocol: "https", hostname: "www.woodtowater.co.uk", pathname: "/cdn/shop/**" },
+      { protocol: "https", hostname: "cdn.shopify.com", pathname: "/s/files/**" },
+    ],
   },
 };
 

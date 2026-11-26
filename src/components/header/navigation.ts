@@ -23,6 +23,6 @@ export const primaryLinks: MenuLink[] = [
   { label: "Sale", href: "/collections/clearance" },
   { label: "Brands", href: "/pages/all-brands" },
   { label: "About", href: "/pages/about" },
-  { label: "Contact", href: "/pages/contact-us-at-w2w" },
+  { label: "Contact", href: "/pages/contact-us" },
   { label: "Collabs", href: "/pages/collab" },
 ];

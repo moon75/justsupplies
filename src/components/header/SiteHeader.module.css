@@ -24,8 +24,8 @@
 .downCaret { display: inline-block; width: 0; height: 0; border: 3px solid transparent; border-top-color: currentColor; transform: translateY(2px); }
 .productMenu, .blogMenu { position: absolute; z-index: 55; top: 32.5px; left: 0; width: 231.672px; padding: 15px 0; border-radius: 10px; background: #fff; color: var(--color-text); font-size: 14px; line-height: 20px; font-weight: 400; text-transform: uppercase; }
 .groupRow { position: relative; }
-.groupRow > button, .blogMenu a { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 10px; border: 0; padding: 6px 20px; background: transparent; color: var(--color-text); font-size: inherit; font-weight: inherit; line-height: inherit; text-align: left; text-transform: uppercase; }
-.groupRow > button:hover, .blogMenu a:hover, .subMenu a:hover { color: var(--color-brand); background: #f4f4f4; }
+.groupRow > a, .blogMenu a { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 10px; border: 0; padding: 6px 20px; background: transparent; color: var(--color-text); font-size: inherit; font-weight: inherit; line-height: inherit; text-align: left; text-transform: uppercase; }
+.groupRow > a:hover, .blogMenu a:hover, .subMenu a:hover { color: var(--color-brand); background: #f4f4f4; }
 .subMenu { position: absolute; z-index: 56; top: -15px; left: 100%; width: 260px; max-height: min(650px, calc(100vh - 220px)); overflow-y: auto; padding: 15px 0; border-radius: 10px; background: #fff; }
 .subMenu a { display: block; padding: 6px 20px; font-size: 14px; line-height: 20px; text-transform: none; }
 .desktopSearch { position: relative; flex: 0 1 380px; height: 55px; margin-top: 6px; }
@@ -70,8 +70,8 @@
   .header { height: var(--header-mobile-height); }
   .desktopTop, .desktopBottom { display: none; }
   .mobileBar { display: flex; align-items: center; justify-content: space-between; height: 103.453px; padding: 20px; }
-  .mobileLogo { display: block; width: 140px; height: 63.453px; }
-  .mobileLogo .logoArt { transform: scale(1.4); }
+  .mobileLogo { display: block; flex: 0 1 auto; width: min(200px, 52vw); height: 56px; }
+  .mobileLogo .logoArt { transform: none; }
   .mobileActions { display: flex; align-items: center; gap: 10px; }
   .mobileIcon { position: relative; display: grid; place-items: center; width: 45px; height: 45px; border: 0; border-radius: 50%; background: #fff; color: var(--color-brand); }
   .mobileIcon:last-child { color: var(--color-header); }

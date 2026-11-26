@@ -1,0 +1,27 @@
+.content { max-width: 1000px; margin: 0 auto; padding: 50px var(--content-gutter) 40px; text-align: center; font-size: 17px; }
+.content p { margin: 0 0 18px; }
+.pageTitle { margin: 0; font-size: 40px; font-weight: 500; line-height: 1.2; }
+.hero { margin: 8px 0 16px; font-size: 52px; font-weight: 700; line-height: 1.05; letter-spacing: -0.5px; }
+.heading { margin: 28px 0 12px; font-size: 34px; font-weight: 600; line-height: 1.15; }
+.list { display: inline-block; margin: 0 0 14px; padding-left: 20px; text-align: center; }
+.list li { margin-bottom: 10px; }
+
+.signup { padding: 60px var(--content-gutter) 70px; text-align: center; }
+.signupTitle { max-width: 360px; margin: 0 auto 20px; font-size: 66px; font-weight: 700; line-height: 1; }
+.apply { display: inline-block; padding: 12px 30px; background: var(--color-brand); color: var(--color-white); font-size: 14px; }
+.apply:hover { opacity: 0.9; }
+.member { margin: 16px 0 24px; font-size: 14px; }
+.member a { color: var(--color-brand); }
+.gallery { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.gallery img { width: 160px; height: 160px; object-fit: contain; background: var(--color-white); }
+.partner { margin: 26px 0 0; font-size: 40px; font-weight: 600; }
+
+@media (max-width: 749px) {
+  .content { padding-top: 30px; font-size: 15px; }
+  .pageTitle { font-size: 30px; }
+  .hero { font-size: 32px; }
+  .heading { font-size: 24px; }
+  .signupTitle { font-size: 44px; }
+  .gallery img { width: calc(50% - 4px); height: auto; aspect-ratio: 1; }
+  .partner { font-size: 28px; }
+}

@@ -32,3 +32,22 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Use lightweight local placeholders when an asset is missing.
 - Do not perform visual browser checks unless the user explicitly requests them.
 - The user will handle visual review and report any corrections.
+
+## Token-saving rules
+
+- Never read whole large files; grep first, then read only the needed line range.
+- Do not re-read a file you just edited or already read this session.
+- Do not explore the repo structure unless asked; ask for the file path if unsure.
+- Do not spawn subagents/Agent tool unless explicitly asked.
+- Do not run build, lint, or typecheck unless asked; the user tests in the browser.
+- Do not start or restart the dev server; the user keeps it running.
+- Read node_modules Next.js docs only when using an unfamiliar Next.js API.
+- Batch independent edits/tool calls into one step.
+- Summarize changes in 1–3 lines max. Do not echo code back in replies.
+- No plans, options, or explanations unless asked; just make the change.
+- If a request is ambiguous, ask one short question instead of guessing and redoing work.
+- Do not commit, push, or run git commands unless asked.
+- Do not fetch or browse the reference website again; use existing notes/components.
+- Do not refactor, rename, or clean up code outside the requested change.
+- Build pages from reusable block components. Before creating a section, check `src/components` for an existing one that matches (product grid, FAQ, hero, banner, reviews, newsletter, etc.) and reuse it with props instead of rebuilding.
+- Use one dynamic template per page type (product, collection, blog, policy) rather than separate pages.
