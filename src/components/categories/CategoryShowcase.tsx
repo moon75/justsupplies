@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { categories } from "./categories";
+import { isVerifiedHref } from "@/lib/verified";
 import styles from "./CategoryShowcase.module.css";
 
 export default function CategoryShowcase() {
@@ -14,7 +15,7 @@ export default function CategoryShowcase() {
       </header>
 
       <div className={styles.grid}>
-        {categories.map(category => <a className={styles.card} href={category.href} key={category.title}>
+        {categories.filter(category => isVerifiedHref(category.href)).map(category => <a className={styles.card} href={category.href} key={category.title}>
           <span className={`${styles.imageWrap} ${category.crop === "circle" ? styles.circle : ""}`}>
             <Image src={category.image} alt="" fill sizes="(max-width: 749px) 120px, 160px" className={styles.categoryImage} unoptimized={category.image.startsWith("http")} />
           </span>

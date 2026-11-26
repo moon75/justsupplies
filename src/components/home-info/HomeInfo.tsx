@@ -1,6 +1,7 @@
 import { brands, promises } from "./content";
 import ReviewsStrip from "./ReviewsStrip";
 import styles from "./HomeInfo.module.css";
+import { isVerifiedHref } from "@/lib/verified";
 
 const icons = {
   truck: <path d="M3 6h11v9H3zM14 9h4l3 3v3h-7zM7 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm10 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM1 8h5M0 11h5" />,
@@ -39,7 +40,7 @@ export default function HomeInfo() {
     <section className={styles.brands} aria-labelledby="brands-title">
       <h2 id="brands-title" className={styles.heading}>OUR TRUSTED BRANDS</h2>
       <ul className={styles.brandGrid}>
-        {brands.map(brand => <li key={brand.href}><a className={styles.brand} href={brand.href} aria-label={brand.name}>
+        {brands.filter(brand => isVerifiedHref(brand.href)).map(brand => <li key={brand.href}><a className={styles.brand} href={brand.href} aria-label={brand.name}>
           {/* eslint-disable-next-line @next/next/no-img-element -- remote logo from client-approved source */}
           <img src={brand.logo} alt="" loading="lazy" decoding="async" />
         </a></li>)}

@@ -11,7 +11,7 @@ export type Product = {
   options: { name: string; values: string[] }[]; variants: Variant[];
   createdAt: string; publishedAt: string;
 };
-export type Collection = { handle: string; title: string; descriptionHtml: string; image: string | null; productHandles: string[] };
+export type Collection = { handle: string; title: string; descriptionHtml: string; image: string | null; productHandles: string[]; verified?: boolean };
 
 export const products = productsData as Product[];
 export const collections = collectionsData as Collection[];
@@ -20,7 +20,7 @@ const byHandle = new Map(products.map(p => [p.handle, p]));
 export const getProduct = (handle: string) => byHandle.get(handle);
 export const getCollection = (handle: string): Collection | undefined =>
   collections.find(c => c.handle === handle) ??
-  (handle === "all" ? { handle: "all", title: "All Products", descriptionHtml: "", image: null, productHandles: products.map(p => p.handle) } : undefined);
+  (handle === "all" ? { handle: "all", title: "All Products", descriptionHtml: "", image: null, productHandles: products.map(p => p.handle), verified: true } : undefined);
 export const getCollectionProducts = (c: Collection) => c.productHandles.map(h => byHandle.get(h)).filter((p): p is Product => !!p);
 
 export { formatPrice } from "./format";

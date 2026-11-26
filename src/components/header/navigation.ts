@@ -1,4 +1,5 @@
 import productGroupsData from "./product-groups.json";
+import { isVerifiedHref } from "@/lib/verified";
 
 // Site-relative links; set to an external origin only if needed.
 export const shopOrigin = "";
@@ -6,7 +7,10 @@ export const shopOrigin = "";
 export type MenuLink = { label: string; href: string };
 export type MenuGroup = { label: string; links: MenuLink[] };
 
-export const productGroups: MenuGroup[] = productGroupsData;
+// Only collections with verified product lists appear in the menu; empty groups are hidden.
+export const productGroups: MenuGroup[] = productGroupsData
+  .map(group => ({ ...group, links: group.links.filter(link => isVerifiedHref(link.href)) }))
+  .filter(group => group.links.length > 0);
 
 export const blogLinks: MenuLink[] = [
   { label: "Guides", href: "/blogs/bushcraft-camping-guides" },

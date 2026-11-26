@@ -11,5 +11,5 @@ export const categories: readonly Category[] = [
   { title: "Camping Meals", image: "https://www.woodtowater.co.uk/cdn/shop/collections/Dehydrated-Camping-Meals.jpg?v=1741252678&width=400", href: "/collections/dehydrated-camping-expedition-meals" },
   { title: "Water Bottles and Flasks", image: "https://www.woodtowater.co.uk/cdn/shop/collections/BOTTLES-AND-FLASKS-FILTERS.webp?v=1741252600&width=400", href: "/collections/outdoors-hydration" },
   { title: "All Camping Stoves, Cookers & Systems", image: "https://www.woodtowater.co.uk/cdn/shop/collections/jetboil-zip-cooking-system-carbon-1.png?v=1741252618&width=400", href: "/collections/camping-stoves-cookers" },
-  { title: "Headtorches", image: "https://www.woodtowater.co.uk/cdn/shop/collections/Petzl_Bindi_Headlamp_Emerald_Orange_Black_M2.jpg?v=1781189037&width=400", href: "/collections/camping-lights-and-lanterns", crop: "circle" },
+  { title: "Headtorches", image: "https://www.woodtowater.co.uk/cdn/shop/collections/Petzl_Bindi_Headlamp_Emerald_Orange_Black_M2.jpg?v=1781189037&width=400", href: "/collections/headtorches", crop: "circle" },
 ];

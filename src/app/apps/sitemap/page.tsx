@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Sitemap" };
 const pages = [["Home", "/"], ["All Products", "/collections/all"], ["New Products", "/collections/new-products"], ["Back in Stock", "/collections/back-in-stock-1"], ["Sale", "/collections/clearance"], ["Brands", "/pages/all-brands"], ["Blog", "/pages/all-blog-posts"], ["About", "/pages/about"], ["Contact", "/pages/contact-us"], ["Collabs", "/pages/collab"], ["Returns", "/pages/returns"], ["Terms and Conditions", "/pages/terms-and-conditions"]];
 
 export default function Sitemap() {
-  const list = collections.filter(c => c.productHandles.length).sort((a, b) => a.title.localeCompare(b.title));
+  const list = collections.filter(c => c.verified && c.productHandles.length).sort((a, b) => a.title.localeCompare(b.title));
   return <main id="main-content" className="site-content">
     <TextPage title="Sitemap">
       <h2>Pages</h2>

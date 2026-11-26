@@ -1,5 +1,6 @@
 """Rebuild src/data/collections.json from a raw Shopify collections.json + src/data/products.json.
-Usage: python3 -I scripts/build_collections.py <raw/collections.json>"""
+Usage: python3 -I scripts/build_collections.py <raw/collections.json> [--exact-only]
+--exact-only: collections without a fetched list get no products and verified=false."""
 import json, os, re, sys
 
 STOP = {"all", "and", "the", "camping", "outdoor", "outdoors", "gear", "for", "of", "uk", "co"}
@@ -10,6 +11,7 @@ raw = json.load(open(sys.argv[1]))["collections"]
 products = json.load(open("src/data/products.json"))
 old = {c["handle"]: c for c in json.load(open("src/data/collections.json"))}
 known = {p["handle"] for p in products}
+EXACT_ONLY = "--exact-only" in sys.argv
 missing = set()
 
 out = []
@@ -23,6 +25,8 @@ for c in raw:
             listed = [p["handle"] for p in listed.get("products", [])]
         missing.update(h for h in listed if h not in known)
         handles = [h for h in listed if h in known]
+    elif EXACT_ONLY:
+        handles = []
     elif handle == "all":
         handles = [p["handle"] for p in products]
     else:
@@ -35,8 +39,15 @@ for c in raw:
                            if all(w in " ".join([p["type"], *p["tags"]]).lower() for w in kw)]
         handles = list(dict.fromkeys(old.get(handle, {}).get("productHandles", []) + matched))
     out.append({"handle": handle, "title": title, "descriptionHtml": c.get("body_html") or "",
-                "image": (c.get("image") or {}).get("src"), "productHandles": handles})
+                "image": (c.get("image") or {}).get("src"), "productHandles": handles,
+                "verified": os.path.exists(exact)})
 
+# Site rename: never show the source store's name.
+brand = re.compile(r"wood\s+(?:to|2|&amp;|&)\s+water", re.I)
+for c in out:
+    c["title"] = brand.sub("JustSupplies", c["title"]); c["descriptionHtml"] = brand.sub("JustSupplies", c["descriptionHtml"])
 json.dump(out, open("src/data/collections.json", "w"), ensure_ascii=False, separators=(",", ":"))
+json.dump(sorted(c["handle"] for c in out if c["verified"]), open("src/data/verified-collections.json", "w"))
+print(sum(c["verified"] for c in out), "verified collections")
 print(len(missing), "products listed in collections but missing from products.json")
 print(len(out), "collections;", sum(1 for c in out if not c["productHandles"]), "empty")
