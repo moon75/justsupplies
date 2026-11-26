@@ -18,9 +18,14 @@ const josefinSans = Josefin_Sans({
   display: "swap",
 });
 
+const tagline = "Outdoor · Camping · Bushcraft";
+
 export const metadata: Metadata = {
-  title: "justsupplies",
-  description: "Outdoor equipment and camping supplies",
+  // Every page title carries the brand and tagline, e.g. "About Us | JustSupplies – Outdoor · Camping · Bushcraft".
+  title: { default: `JustSupplies – ${tagline}`, template: `%s | JustSupplies – ${tagline}` },
+  description: "JustSupplies: outdoor, camping and bushcraft gear from trusted brands, with fast UK delivery.",
+  applicationName: "JustSupplies",
+  openGraph: { siteName: "JustSupplies", title: `JustSupplies – ${tagline}` },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
