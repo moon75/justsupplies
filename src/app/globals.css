@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --color-page: #f4f4f4;
-  --color-text: #232323;
-  --color-header: #3a3d42;
-  --color-brand: #0a5947;
+  --color-page: #f5f2ec;
+  --color-text: #1f2328;
+  --color-header: #1b2838;
+  --color-brand: #c2501c;
   --color-white: #fff;
-  --color-footer: #212121;
+  --color-footer: #111a25;
   --font-body: var(--font-instrument), sans-serif;
   --font-promotion: var(--font-josefin), sans-serif;
   --content-max: 1660px;
@@ -95,15 +95,15 @@ a { color: inherit; text-decoration: none; }
 /* Button hover (always on, matches reference): lighter green pill grows from the centre */
 [class*="_action"], [class*="_cta"], [class*="_primary"], main [class*="_apply"], main [class$="_pay"], main [class*="_addToCart"] { position: relative; isolation: isolate; overflow: hidden; }
 [class*="_action"]::before, [class*="_cta"]::before, [class*="_primary"]::before, main [class*="_apply"]::before, main [class$="_pay"]::before, main [class*="_addToCart"]::before {
-  content: ""; position: absolute; z-index: -1; top: 50%; left: 50%; width: 0; height: 0; border-radius: 50px; background: #129e7e;
+  content: ""; position: absolute; z-index: -1; top: 50%; left: 50%; width: 0; height: 0; border-radius: 50px; background: #e8743b;
   transition: all 0.3s;
 }
 [class*="_action"]:hover::before, [class*="_cta"]:hover::before, [class*="_primary"]:hover::before, main [class*="_apply"]:hover::before, main [class$="_pay"]:hover::before, main [class*="_addToCart"]:not(:disabled):hover::before { top: -1px; left: -1px; width: calc(100% + 2px); height: calc(100% + 2px); }
 
 /* Add-to-cart confirmation */
 @keyframes js-check { 0% { transform: scale(0) rotate(-30deg); } 60% { transform: scale(1.4) rotate(10deg); } 100% { transform: scale(1); } }
-.is-added { background-color: #129e7e !important; }
-.atc-check { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #fff; color: #129e7e; font-size: 13px; font-weight: 800; }
+.is-added { background-color: #e8743b !important; }
+.atc-check { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #fff; color: #e8743b; font-size: 13px; font-weight: 800; }
 @media all {
   .is-added { animation: js-pop 0.45s ease; }
   .atc-check { animation: js-check 0.45s cubic-bezier(0.3, 1.6, 0.5, 1); }

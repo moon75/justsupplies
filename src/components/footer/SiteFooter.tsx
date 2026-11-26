@@ -24,7 +24,7 @@ const payments = ["AMEX", "Apple Pay", "Diners", "Discover", "G Pay", "Klarna", 
 function SocialIcon({ name }: { name: "facebook" | "instagram" | "youtube" }) {
   if (name === "facebook") return <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2h-5.1v-8h2.7l.4-3.1h-3.1V8.8c0-.9.3-1.4 1.5-1.4H18V4.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H8.5V14h2.8v8H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" /></svg>;
   if (name === "instagram") return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.4"/><circle cx="18.2" cy="5.9" r="1" fill="currentColor" stroke="none"/></svg>;
-  return <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="currentColor"/><path d="m10 8 6 4-6 4Z" fill="#0a5947"/></svg>;
+  return <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="currentColor"/><path d="m10 8 6 4-6 4Z" fill="#c2501c"/></svg>;
 }
 
 function CheckIcon() {

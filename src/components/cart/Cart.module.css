@@ -79,7 +79,7 @@
   .line { animation: lineIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
   .line:nth-child(2) { animation-delay: 60ms; } .line:nth-child(3) { animation-delay: 120ms; } .line:nth-child(4) { animation-delay: 180ms; } .line:nth-child(n+5) { animation-delay: 240ms; }
   .bump { display: inline-block; animation: bump 0.4s ease; }
-  .freeDone .track span { background: linear-gradient(90deg, var(--color-brand), #2fd3a4, var(--color-brand)); background-size: 200% 100%; animation: shine 1.6s linear infinite; }
+  .freeDone .track span { background: linear-gradient(90deg, var(--color-brand), #f4a259, var(--color-brand)); background-size: 200% 100%; animation: shine 1.6s linear infinite; }
   .freeDone p strong { display: inline-block; animation: bump 0.5s ease; }
   .summary, .emptyPage, .drawerFooter { animation: fadeUp 0.45s ease both; }
   .qty button, .remove { transition: transform 0.15s ease, background-color 0.15s ease; }

@@ -49,7 +49,7 @@
   line-height: 1.4;
   transition: background-color 300ms, opacity 300ms;
 }
-.cta:hover { background-color: #084a3b; }
+.cta:hover { background-color: #a8441a; }
 .arrow { width: 14px; height: 14px; flex: none; }
 .controls {
   position: absolute;

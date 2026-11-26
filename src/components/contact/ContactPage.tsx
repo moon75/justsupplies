@@ -38,7 +38,7 @@ export default function ContactPage() {
         {/* eslint-disable-next-line @next/next/no-img-element -- remote image from client-approved source */}
         <img src={warehouseImage} alt="Our warehouse" loading="lazy" decoding="async" />
       </div>
-      <div className={styles.panel} style={{ backgroundImage: `linear-gradient(rgb(10 89 71 / 78%), rgb(10 89 71 / 78%)), url("${warehouseImage}")` }}>
+      <div className={styles.panel} style={{ backgroundImage: `linear-gradient(rgb(27 40 56 / 78%), rgb(27 40 56 / 78%)), url("${warehouseImage}")` }}>
         <div className={styles.panelContent}>
           <p className={styles.eyebrow}><span aria-hidden="true" />WANT TO KNOW MORE?</p>
           <h2 id="contact-faq-title" className={styles.faqHeading}>FAQs</h2>

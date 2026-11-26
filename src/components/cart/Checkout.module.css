@@ -42,7 +42,7 @@ select.input { padding-top: 14px; appearance: auto; }
 .radio { display: flex; align-items: center; gap: 12px; padding: 16px 14px; border-bottom: 1px solid var(--co-border); cursor: pointer; }
 .radio:last-child { border-bottom: 0; }
 .radio input { width: 18px; height: 18px; margin: 0; accent-color: var(--co-accent); }
-.radioActive { background: #f0f5f3; border-color: var(--co-accent); }
+.radioActive { background: #fbeee6; border-color: var(--co-accent); }
 .radioText { flex: 1; display: flex; flex-direction: column; }
 .radioText small { color: var(--co-muted); font-size: 13px; }
 .cards { display: flex; gap: 4px; }
@@ -124,7 +124,7 @@ select.input { padding-top: 14px; appearance: auto; }
   .check { animation: checkPop 0.6s cubic-bezier(0.3, 1.6, 0.5, 1) both 0.15s; }
   .thanks h1, .thanks .box, .thanks > .pay { animation: fadeUp 0.5s ease both 0.35s; }
   .confetti i { animation: confetti 1.4s cubic-bezier(0.2, 0.6, 0.4, 1) forwards; animation-delay: calc(var(--i) * 25ms); }
-  .confetti i:nth-child(4n+1) { background: #0a5947; --x: -90px; } .confetti i:nth-child(4n+2) { background: #2fd3a4; --x: 80px; }
+  .confetti i:nth-child(4n+1) { background: #c2501c; --x: -90px; } .confetti i:nth-child(4n+2) { background: #f4a259; --x: 80px; }
   .confetti i:nth-child(4n+3) { background: #ffc439; --x: -40px; } .confetti i:nth-child(4n) { background: #ff6b6b; --x: 120px; }
   .confetti i:nth-child(3n) { --x: 30px; } .confetti i:nth-child(5n) { --x: -130px; } .confetti i:nth-child(7n) { --x: 160px; }
 }
