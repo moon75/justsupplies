@@ -1,0 +1,9 @@
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file: .env.production
+    volumes:
+      - ./site-data:/app/data   # products, categories, blog, homepage text and uploaded images live here — back this folder up

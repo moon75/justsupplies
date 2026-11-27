@@ -44,3 +44,8 @@ next-env.d.ts
 # Python / scraped raw data
 __pycache__/
 raw/
+
+# Control panel data volume (Docker)
+site-data/
+.env.production
+!.env.example

@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogListing from "@/components/blog/BlogListing";
-import { blogs, getBlog, getBlogArticles, toCard } from "@/lib/blog";
+import { allBlogs, getBlog, getBlogArticles, toCard } from "@/lib/blog";
 import { stripHtml } from "@/lib/catalog-text";
 
+
+// Content can change from the control panel: render on demand after a save (params read outside Suspense).
+export const instant = false;
 export function generateStaticParams() {
-  return blogs.map(b => ({ handle: b.handle }));
+  return allBlogs().map(b => ({ handle: b.handle }));
 }
 
 export async function generateMetadata(props: PageProps<"/blogs/[handle]">): Promise<Metadata> {

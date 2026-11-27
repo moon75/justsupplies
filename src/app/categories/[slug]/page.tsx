@@ -7,6 +7,9 @@ import styles from "@/components/categories/CategoryGroup.module.css";
 
 const findGroup = (slug: string) => productGroups.find(g => groupSlug(g.label) === slug);
 
+
+// Content can change from the control panel: render on demand after a save (params read outside Suspense).
+export const instant = false;
 export function generateStaticParams() {
   return productGroups.filter(g => g.links.length > 1).map(g => ({ slug: groupSlug(g.label) }));
 }

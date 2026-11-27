@@ -8,7 +8,8 @@ import Newsletter from "@/components/newsletter/Newsletter";
 import FaqSection from "@/components/faq/FaqSection";
 import { groupSlug } from "@/components/header/groups";
 import { productGroups } from "@/components/header/navigation";
-import { getCollection, getCollectionByHandle, getCollectionProducts, getNewest, products, toCard, type Product } from "@/lib/catalog";
+import { getSettings } from "@/lib/settings";
+import { getCollection, getCollectionByHandle, getCollectionProducts, getNewest, allProducts, toCard, type Product } from "@/lib/catalog";
 
 const firstWithImage = (handle: string) => getCollectionByHandle(handle).find(p => p.available && p.images.length);
 
@@ -44,14 +45,15 @@ export default function Home() {
     { label: "Back in stock", href: "/collections/back-in-stock-1", items: getCollectionByHandle("back-in-stock-1").filter(p => p.available).slice(0, 8).map(toCard) },
     { label: "On sale", href: "/collections/clearance", items: sale.map(toCard) },
   ].filter(t => t.items.length);
+  const settings = getSettings();
   const storyImage = firstWithImage("lightweight-hiking-tents")?.images[0] ?? null;
 
   return <main id="main-content" className="site-content">
-    <HomeHero picks={picks} productCount={products.length} />
+    <HomeHero picks={picks} productCount={allProducts().length} settings={settings} />
     <Adventures items={buildAdventures()} />
     <ProductTabs tabs={tabs} />
     <PromoBand />
-    <StoryBlock image={storyImage} />
+    <StoryBlock image={storyImage} title={settings.storyTitle} text={settings.storyText} />
     <BrandMarquee />
     <Newsletter />
     <FaqSection />

@@ -1,0 +1,83 @@
+/* Control panel: full-screen layer over the site chrome */
+.shell { position: fixed; z-index: 300; inset: 0; display: flex; overflow: auto; background: #f3f4f6; color: #1f2328; font-size: 14px; }
+.sidebar { position: sticky; top: 0; display: flex; flex-direction: column; flex: 0 0 230px; height: 100vh; padding: 24px 16px; background: var(--color-header); color: #fff; }
+.brand { display: flex; flex-direction: column; margin-bottom: 30px; font-size: 20px; font-weight: 700; color: #fff; }
+.brand small, .loginBox h1 small { font-size: 12px; font-weight: 500; opacity: 0.7; }
+.sidebar nav { display: flex; flex-direction: column; gap: 4px; }
+.sidebar nav a { padding: 10px 12px; border-radius: 8px; color: #fff; opacity: 0.85; }
+.sidebar nav a:hover { background: rgb(255 255 255 / 10%); opacity: 1; }
+.sideFoot { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
+.sideFoot a, .sideFoot button { padding: 8px 12px; border: 0; background: none; color: #fff; font: inherit; text-align: left; opacity: 0.75; cursor: pointer; }
+.content { flex: 1; min-width: 0; max-width: 1200px; padding: 30px 36px 80px; }
+
+.h1 { margin: 0 0 20px; font-size: 28px; font-weight: 700; }
+.h1 small { font-size: 16px; font-weight: 500; opacity: 0.6; }
+.titleRow { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
+.back { margin: 0 0 8px; }
+.back a { color: var(--color-brand); }
+.hint { margin: 8px 0; font-size: 13px; color: #6b7280; }
+
+.primary, .secondary, .dangerBtn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 18px; border: 1px solid transparent; border-radius: 8px; font: inherit; font-weight: 600; cursor: pointer; }
+.primary { background: var(--color-brand); color: #fff; }
+.primary:disabled { opacity: 0.6; cursor: wait; }
+.secondary { border-color: #d1d5db; background: #fff; color: #1f2328; }
+.dangerBtn { border-color: #fca5a5; background: #fff; color: #b91c1c; }
+.danger { margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-bottom: 20px; }
+.stat { display: flex; flex-direction: column; padding: 20px; border-radius: 12px; background: #fff; }
+.stat strong { font-size: 30px; }
+.stat span { color: #6b7280; }
+.quick { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+
+.searchRow { display: flex; gap: 8px; margin: 0 0 16px; }
+.searchRow input, .searchRow select { padding: 9px 12px; border: 1px solid #d1d5db; border-radius: 8px; font: inherit; background: #fff; }
+.searchRow input { flex: 1; max-width: 420px; }
+
+.table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 12px; background: #fff; }
+.table th, .table td { padding: 10px 12px; border-bottom: 1px solid #eef0f2; text-align: left; vertical-align: middle; }
+.table th { background: #f9fafb; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; }
+.table a { color: var(--color-brand); font-weight: 600; }
+.table input:not([type="checkbox"]) { width: 100%; min-width: 70px; padding: 7px 9px; border: 1px solid #d1d5db; border-radius: 6px; font: inherit; }
+.rowImg { width: 44px; height: 44px; object-fit: contain; border-radius: 6px; background: #f3f4f6; }
+.badgeOk, .badgeOff { padding: 3px 9px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+.badgeOk { background: #dcfce7; color: #166534; }
+.badgeOff { background: #fee2e2; color: #991b1b; }
+.pager { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 16px; }
+.pager a { color: var(--color-brand); font-weight: 600; }
+
+.form { display: flex; flex-direction: column; gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field > span { font-weight: 600; }
+.field input, .field textarea, .field select, .box > textarea { width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; background: #fff; font: inherit; }
+.field textarea, .box > textarea { resize: vertical; }
+.mono { font-family: ui-monospace, monospace; font-size: 13px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; align-items: end; }
+.check { display: flex; align-items: center; gap: 8px; padding-bottom: 10px; font-weight: 600; }
+.box { display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 18px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; }
+.box legend { padding: 0 6px; font-weight: 700; }
+.thumbs { display: flex; flex-wrap: wrap; gap: 8px; }
+.thumbs img { width: 70px; height: 70px; object-fit: contain; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; }
+.upload { font-size: 13px; color: #4b5563; }
+.checkList input[type="search"] { width: 100%; margin-bottom: 8px; padding: 9px 12px; border: 1px solid #d1d5db; border-radius: 8px; font: inherit; }
+.checkScroll { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 4px 12px; max-height: 260px; overflow: auto; padding: 8px; border: 1px solid #e5e7eb; border-radius: 8px; }
+.checkScroll label { display: flex; align-items: center; gap: 8px; }
+
+.saveBar { position: sticky; bottom: 0; z-index: 2; display: flex; justify-content: flex-end; align-items: center; gap: 14px; padding: 14px 0; background: linear-gradient(transparent, #f3f4f6 30%); }
+.ok { margin: 0; padding: 8px 12px; border-radius: 8px; background: #dcfce7; color: #166534; }
+.error { margin: 0; padding: 8px 12px; border-radius: 8px; background: #fee2e2; color: #991b1b; }
+
+.loginBox { width: min(380px, calc(100% - 32px)); margin: auto; padding: 32px; border-radius: 16px; background: #fff; box-shadow: 0 20px 60px rgb(0 0 0 / 10%); }
+.loginBox h1 { display: flex; flex-direction: column; margin: 0 0 24px; font-size: 24px; }
+
+@media (max-width: 860px) {
+  .shell { flex-direction: column; }
+  .sidebar { position: static; flex: none; height: auto; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 10px; padding: 12px 16px; }
+  .brand { margin: 0 auto 0 0; }
+  .sidebar nav { flex-direction: row; flex-wrap: wrap; }
+  .sideFoot { flex-direction: row; margin: 0; }
+  .content { padding: 20px 16px 80px; }
+  .stats, .grid2, .grid3 { grid-template-columns: 1fr 1fr; }
+  .table { display: block; overflow-x: auto; }
+}

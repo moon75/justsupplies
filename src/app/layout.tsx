@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Instrument_Sans, Josefin_Sans } from "next/font/google";
 import { SiteHeader } from "@/components/header/SiteHeader";
@@ -37,7 +38,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {children}
         <SiteFooter />
         </CartProvider>
-        <ScrollReveal />
+        <Suspense fallback={null}><ScrollReveal /></Suspense>
       </body>
     </html>
   );

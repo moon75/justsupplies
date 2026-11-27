@@ -1,0 +1,8 @@
+node_modules
+.next
+.git
+.vercel
+raw
+site-data
+.env*
+!.env.example

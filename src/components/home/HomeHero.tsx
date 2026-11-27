@@ -1,18 +1,22 @@
 import type { Product } from "@/lib/catalog";
+import type { SiteSettings } from "@/lib/settings";
 import { formatPrice } from "@/lib/format";
 import styles from "./Home.module.css";
 
 const sized = (src: string, w: number) => `${src}${src.includes("?") ? "&" : "?"}width=${w}`;
 
-export default function HomeHero({ picks, productCount }: { picks: Product[]; productCount: number }) {
+// "*word*" in the heading becomes the highlighted word.
+const renderTitle = (title: string) => title.split(/(\*[^*]+\*)/).map((part, i) => part.startsWith("*") && part.endsWith("*") ? <em key={i}>{part.slice(1, -1)}</em> : part);
+
+export default function HomeHero({ picks, productCount, settings }: { picks: Product[]; productCount: number; settings: SiteSettings }) {
   return <section className={styles.hero}>
     <div className={styles.heroInner}>
       <div className={styles.heroText}>
-        <p className={styles.pill}><span aria-hidden="true">●</span> New season gear just landed</p>
-        <h1 className={styles.heroTitle}>Gear up for every <em>wild</em> adventure.</h1>
-        <p className={styles.heroLead}>Tents, stoves, sleep systems and bushcraft kit from the brands outdoor people trust — picked, packed and shipped from the UK by JustSupplies.</p>
+        <p className={styles.pill}><span aria-hidden="true">●</span> {settings.heroPill}</p>
+        <h1 className={styles.heroTitle}>{renderTitle(settings.heroTitle)}</h1>
+        <p className={styles.heroLead}>{settings.heroLead}</p>
         <div className={styles.heroCtas}>
-          <a className={styles.cta} href="/collections/all"><span>Shop all gear</span><span aria-hidden="true">→</span></a>
+          <a className={styles.cta} href="/collections/all"><span>{settings.heroButton}</span><span aria-hidden="true">→</span></a>
           <a className={styles.ghost} href="#shop-by-adventure">Find your adventure</a>
         </div>
         <ul className={styles.trust}>

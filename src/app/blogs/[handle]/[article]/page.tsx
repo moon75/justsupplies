@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ArticleGrid from "@/components/blog/ArticleGrid";
 import styles from "@/components/blog/Blog.module.css";
-import { articles, formatDate, getArticle, getBlog, getBlogArticles, toCard } from "@/lib/blog";
+import { allArticles, formatDate, getArticle, getBlog, getBlogArticles, toCard } from "@/lib/blog";
 
+
+// Content can change from the control panel: render on demand after a save (params read outside Suspense).
+export const instant = false;
 export function generateStaticParams() {
-  return articles.map(a => ({ handle: a.blog, article: a.handle }));
+  return allArticles().map(a => ({ handle: a.blog, article: a.handle }));
 }
 
 export async function generateMetadata(props: PageProps<"/blogs/[handle]/[article]">): Promise<Metadata> {

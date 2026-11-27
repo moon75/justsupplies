@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import CollectionPage from "@/components/collection/CollectionPage";
-import { products, toCollectionCard } from "@/lib/catalog";
+import { allProducts, toCollectionCard } from "@/lib/catalog";
 
 export const metadata: Metadata = { title: "Search" };
 
@@ -10,7 +10,7 @@ async function Results({ searchParams }: { searchParams: PageProps<"/search">["s
   const q = (Array.isArray(raw) ? raw[0] : raw ?? "").replace(/\*/g, "").trim().toLowerCase();
   const terms = q.split(/\s+/).filter(Boolean);
   const results = terms.length
-    ? products.filter(p => { const text = `${p.title} ${p.vendor} ${p.type} ${p.tags.join(" ")}`.toLowerCase(); return terms.every(t => text.includes(t)); }).slice(0, 200)
+    ? allProducts().filter(p => { const text = `${p.title} ${p.vendor} ${p.type} ${p.tags.join(" ")}`.toLowerCase(); return terms.every(t => text.includes(t)); }).slice(0, 200)
     : [];
   return <CollectionPage
     key={q}

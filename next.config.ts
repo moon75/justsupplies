@@ -3,6 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   cacheComponents: true,
+  // Control panel image uploads
+  experimental: { serverActions: { bodySizeLimit: "10mb" } },
   partialPrefetching: true,
   images: {
     remotePatterns: [

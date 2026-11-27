@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getProduct, getRelated, products, toCard } from "@/lib/catalog";
+import { allProducts, getProduct, getRelated, toCard } from "@/lib/catalog";
 import ProductMain from "@/components/product/ProductMain";
 import NewestProducts from "@/components/products/NewestProducts";
 import Newsletter from "@/components/newsletter/Newsletter";
 import CollectionFaq from "@/components/collection/CollectionFaq";
 import styles from "@/components/product/Product.module.css";
 
+
+// Content can change from the control panel: render on demand after a save (params read outside Suspense).
+export const instant = false;
 export function generateStaticParams() {
-  return products.map(p => ({ handle: p.handle }));
+  return allProducts().map(p => ({ handle: p.handle }));
 }
 
 export async function generateMetadata(props: PageProps<"/products/[handle]">): Promise<Metadata> {
